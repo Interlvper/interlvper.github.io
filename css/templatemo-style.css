@@ -418,7 +418,17 @@ footer hr
     }
 /* end social icon */
 
-.left-padded {
+h5.left-padded {
     text-align: left;
-    padding-left: 10px;
+    padding-left: 40px;
+}
+
+h4.left-padded {
+    text-align: left;
+    padding-left: 30px;
+}
+
+h3.left-padded {
+    text-align: left;
+    padding-left: 20px;
 }
