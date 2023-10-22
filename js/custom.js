@@ -6,8 +6,7 @@ $(document).ready(function() {
 				'scrollingSpeed': 600,
 				'autoScrolling': false,
 				'css3': true,
-				'navigation': true,
-				'navigationPosition': 'right',
+				'navigation': false,
 			});
 		});
 
