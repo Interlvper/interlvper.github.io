@@ -51,6 +51,34 @@ h1,h2,h3,h4,h5
         color: #ffffff;
         font-weight: bold;
     }
+
+a
+{
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: underline;
+    user-select: none;
+}
+
+a:link {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+a:active {
+    color: #ffffff;
+    text-decoration: underline;
+}
 /* end all heading */
 
 /* start all section */
@@ -180,8 +208,8 @@ h1,h2,h3,h4,h5
 	}
 #home h1
     {
-        border: 2px solid #D43F52;
-        color: #D43F52;
+        border: 2px solid #ffffff;
+        color: #ffffff;
         display: inline-block;
         letter-spacing: 6px;
         padding: 25px 35px;
@@ -206,7 +234,7 @@ h1,h2,h3,h4,h5
     }
 #home .btn:hover
     {
-        background: #D43F52;
+        background: #ffffff;
         border-color: transparent;
     }
 /* end home */
@@ -230,7 +258,7 @@ h1,h2,h3,h4,h5
     {
         border: 2px solid #ffffff;
         border-radius: 50%;
-        color: #D43F52;
+        color: #ffffff;
         font-size: 24px;
         margin-right: 24px;
         width: 60px;
@@ -257,7 +285,7 @@ h1,h2,h3,h4,h5
 #about h4
     {
         padding: 15px 0;
-		color: #D43F52;
+		color: #ffffff;
     }
 #about .progress
     {
@@ -267,7 +295,7 @@ h1,h2,h3,h4,h5
     }
 #about .progress .progress-bar-danger
     {
-        background: #D43F52;
+        background: #C32F27;
     }
 #about .text-top
     {
@@ -342,7 +370,7 @@ h1,h2,h3,h4,h5
     {
         border: 2px solid #ffffff;
         border-radius: 50%;
-        color: #D43F52;
+        color: #ffffff;
         width: 50px;
         height: 50px;
         line-height: 45px;
@@ -364,7 +392,7 @@ h1,h2,h3,h4,h5
     }
 #contact input[type="submit"]
     {
-        background: #D43F52;
+        background: #ffffff;
         border: 2px solid transparent;
         color: #ffffff;
         font-weight: bold;
@@ -373,7 +401,7 @@ h1,h2,h3,h4,h5
 #contact input[type="submit"]:hover
     {
         background: #ffffff;
-        color: #D43F52;
+        color: #C32F27;
     }
 /* end contact */
 
@@ -414,7 +442,7 @@ footer hr
     }
 .social-icon li a:hover
     {
-        color: #D43F52;
+        color: #ffffff;
     }
 /* end social icon */
 
@@ -431,4 +459,11 @@ h4.left-padded {
 h3.left-padded {
     text-align: left;
     padding-left: 20px;
+}
+
+.bottom-links {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
 }
