@@ -242,7 +242,7 @@ a:active {
 /* start work */
 #work
     {
-        background: #1a1a1a;
+        background: #0a0a0a;
     }
 #work h2
     {
@@ -318,7 +318,7 @@ a:active {
 /* start portfolio */
 #portfolio
     {
-        background: #1a1a1a;
+        background: #0a0a0a;
         text-align: center;
     }
 #portfolio h2
@@ -333,7 +333,7 @@ a:active {
     }
 #portfolio .portfolio-thumb .portfolio-overlay
     {
-        background: #1a1a1a;
+        background: #0a0a0a;
         top: 0;
         left: 0;
         right: 0;
