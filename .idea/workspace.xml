@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6197c56-b930-4710-8594-b9ebcb35ea25" name="Changes" comment="- Changed font.&#10;- Reduced formatting complexity of some of the sections.&#10;- Removed unused Javascript.&#10;- Added a few new CSS classes.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="b6197c56-b930-4710-8594-b9ebcb35ea25" name="Changes" comment="- Attempted to fix white background.">
       <change beforePath="$PROJECT_DIR$/css/templatemo-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/templatemo-style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,7 +66,7 @@
       <option name="presentableId" value="Default" />
       <updated>1729699146947</updated>
       <workItem from="1729699148044" duration="6335000" />
-      <workItem from="1729712467816" duration="9675000" />
+      <workItem from="1729712467816" duration="10159000" />
     </task>
     <task id="LOCAL-00001" summary="- Reworked the majority of the webpage layout&#10;- Removed a lot of javascript and css that was not needed.">
       <option name="closed" value="true" />
@@ -93,7 +92,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729725931848</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="- Attempted to fix white background.">
+      <option name="closed" value="true" />
+      <created>1729726378456</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1729726378456</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -102,6 +109,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="- Reworked the majority of the webpage layout&#10;- Removed a lot of javascript and css that was not needed." />
     <MESSAGE value="- Changed font.&#10;- Reduced formatting complexity of some of the sections.&#10;- Removed unused Javascript.&#10;- Added a few new CSS classes." />
-    <option name="LAST_COMMIT_MESSAGE" value="- Changed font.&#10;- Reduced formatting complexity of some of the sections.&#10;- Removed unused Javascript.&#10;- Added a few new CSS classes." />
+    <MESSAGE value="- Attempted to fix white background." />
+    <option name="LAST_COMMIT_MESSAGE" value="- Attempted to fix white background." />
   </component>
 </project>

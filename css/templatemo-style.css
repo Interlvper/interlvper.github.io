@@ -63,7 +63,7 @@ a:active {
 
 .parallax
 {
-    background: url('../images/background.png');
+    background: url('../images/background.png') fixed;
 }
 
 h5
