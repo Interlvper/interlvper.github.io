@@ -19,6 +19,7 @@
 body
 {
     font-family: "A FOR A", serif;
+    background: rgb(0, 0, 0, 0);
 }
 
 h1,h2,h3,h4,h5,p
@@ -148,11 +149,4 @@ h1.title
     height: 1px;
     margin-top: 0;
     margin-bottom: 0;
-}
-
-.transparent-background {
-    background-color: rgba(0, 0, 0, 0.5); /* Transparent black background */
-    padding: 10px; /* Add some padding to create space around the text */
-    border-radius: 5px; /* Optional: Rounded corners */
-    color: white; /* Ensure text is readable on a dark background */
 }
