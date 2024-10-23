@@ -6,11 +6,20 @@ https://templatemo.com/tm-458-lavish
 		
 */
 
+@font-face {
+    font-family: 'Papyrus';
+    url('../fonts/BroncoPersonalUse.woff') format('woff');
+    url('../fonts/BroncoPersonalUse.woff2') format('woff2');
+    url('../fonts/BroncoPersonalUse.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body
 {
 	background: #000000;
 	color: #999;
-	font-family: 'Raleway', sans-serif;
+    font-family: 'Papyrus', "Times New Roman", serif;
 	font-size: 16px;
 	font-weight: 400;
 }
@@ -155,7 +164,7 @@ a:active {
   z-index: 2;
   display: block;
   opacity: 1;
-  
+
   -webkit-transform: rotateY(180deg) translate3d(0,0,0);
   -moz-transform: rotateY(180deg) translate3d(0,0,0);
   -ms-transform: rotateY(180deg) translate3d(0,0,0);
@@ -466,6 +475,35 @@ h3.left-padded {
     width: 100%;
     bottom: 0;
     text-align: center;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: row-reverse; /* Reverses the order, placing the image on the right */
+    align-items: flex-start;
+}
+
+.image-container {
+    flex: 0 0 50%; /* Image container takes 25% of the width */
+    margin-left: 0px; /* Optional: space between the text and image */
+    margin-bottom: 10px
+}
+
+.img-responsive {
+    max-width: 100%; /* Ensures the image scales to fill 25% width */
+    height: fit-content;
+}
+
+.text-container {
+    flex: 0 0 50%; /* Text container takes 75% of the width */
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background-color: #ddd; /* Change color as needed */
+    margin-top: -10px;
+    margin-bottom: 2px;
 }
 
 
