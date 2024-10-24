@@ -61,9 +61,11 @@ a:active {
     padding-bottom: 100px;
 }
 
-.parallax
+.background
 {
-    background: url('../images/background.png') fixed;
+    background: url('../images/background.png') fixed no-repeat center center;
+    background-size: cover;
+    background-color: #000000;
 }
 
 h5

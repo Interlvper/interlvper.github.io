@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6197c56-b930-4710-8594-b9ebcb35ea25" name="Changes" comment="- Attempted to fix white background.">
+    <list default="true" id="b6197c56-b930-4710-8594-b9ebcb35ea25" name="Changes" comment="- Attempted to fix white background again.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/templatemo-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/templatemo-style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +68,8 @@
       <option name="presentableId" value="Default" />
       <updated>1729699146947</updated>
       <workItem from="1729699148044" duration="6335000" />
-      <workItem from="1729712467816" duration="10159000" />
+      <workItem from="1729712467816" duration="10522000" />
+      <workItem from="1729744558958" duration="1030000" />
     </task>
     <task id="LOCAL-00001" summary="- Reworked the majority of the webpage layout&#10;- Removed a lot of javascript and css that was not needed.">
       <option name="closed" value="true" />
@@ -100,7 +103,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729726378456</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="- Attempted to fix white background again.">
+      <option name="closed" value="true" />
+      <created>1729726855761</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1729726855761</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -110,6 +121,7 @@
     <MESSAGE value="- Reworked the majority of the webpage layout&#10;- Removed a lot of javascript and css that was not needed." />
     <MESSAGE value="- Changed font.&#10;- Reduced formatting complexity of some of the sections.&#10;- Removed unused Javascript.&#10;- Added a few new CSS classes." />
     <MESSAGE value="- Attempted to fix white background." />
-    <option name="LAST_COMMIT_MESSAGE" value="- Attempted to fix white background." />
+    <MESSAGE value="- Attempted to fix white background again." />
+    <option name="LAST_COMMIT_MESSAGE" value="- Attempted to fix white background again." />
   </component>
 </project>
