@@ -1,19 +1,19 @@
 @font-face
 {
     font-family: "Simple Grunge";
-    src:url('../fonts/Simple Grunge.otf');
+    src:url('fonts/Simple Grunge.otf');
 }
 
 @font-face
 {
     font-family: "RuasMediumGrunge";
-    src:url('../fonts/RuasMediumGrunge.ttf');
+    src:url('fonts/RuasMediumGrunge.ttf');
 }
 
 @font-face
 {
     font-family: "A FOR A";
-    src:url('../fonts/A FOR A.ttf');
+    src:url('fonts/A FOR A.ttf');
 }
 
 body
@@ -63,9 +63,8 @@ a:active {
 
 .background
 {
-    background: url('../images/background.png') fixed no-repeat center center;
     background-size: cover;
-    background-color: #000000;
+    background: #000000 url(/images/Background.png) no-repeat fixed center center;
 }
 
 h5
