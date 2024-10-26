@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6197c56-b930-4710-8594-b9ebcb35ea25" name="Changes" comment="- Updated formatting.&#10;- Modified &quot;Contact Me&quot; section.&#10;- Improved image quality.">
+    <list default="true" id="b6197c56-b930-4710-8594-b9ebcb35ea25" name="Changes" comment="- Changed Font.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
     </list>
@@ -74,7 +74,7 @@
       <workItem from="1729699148044" duration="6335000" />
       <workItem from="1729712467816" duration="10522000" />
       <workItem from="1729744558958" duration="1236000" />
-      <workItem from="1729941198631" duration="7368000" />
+      <workItem from="1729941198631" duration="8004000" />
     </task>
     <task id="LOCAL-00001" summary="- Reworked the majority of the webpage layout&#10;- Removed a lot of javascript and css that was not needed.">
       <option name="closed" value="true" />
@@ -148,7 +148,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729948312395</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="- Changed Font.">
+      <option name="closed" value="true" />
+      <created>1729948674381</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1729948674381</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -163,6 +171,7 @@
     <MESSAGE value="- Moved the directory of the css file." />
     <MESSAGE value="- Updated the &quot;About Me&quot; section.&#10;- Updated the &quot;Skills &amp; Tools&quot; section.&#10;- Changed the fonts of headers to better reflect their positions in the hierarchy.&#10;- Revised link format with the &quot;Skills &amp; Tools&quot; section." />
     <MESSAGE value="- Updated formatting.&#10;- Modified &quot;Contact Me&quot; section.&#10;- Improved image quality." />
-    <option name="LAST_COMMIT_MESSAGE" value="- Updated formatting.&#10;- Modified &quot;Contact Me&quot; section.&#10;- Improved image quality." />
+    <MESSAGE value="- Changed Font." />
+    <option name="LAST_COMMIT_MESSAGE" value="- Changed Font." />
   </component>
 </project>

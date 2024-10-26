@@ -63,7 +63,7 @@ a:active
 .background
 {
     background-image: url(/images/Background.png);
-    position: relative
+    background-attachment: fixed;
 }
 
 h5
