@@ -18,13 +18,13 @@
 
 body
 {
-    font-family: "Consolas", serif;
+    font-family: "Arial", serif;
     background: rgb(0, 0, 0, 0);
 }
 
 h1,h2,h3,h4,h5,p
 {
-    color: #ffffff;
+    color: rgb(255, 255, 255, 1);
     text-shadow: 2px 2px rgb(0, 0, 0, 0.5);
 }
 
