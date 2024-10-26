@@ -63,8 +63,8 @@ a:active
 
 .background
 {
-    background-image: url(/images/Background.png);
-    background-attachment: fixed;
+    background: url(/images/Background.png) no-repeat center center fixed;
+    background-size: cover;
 }
 
 h5
