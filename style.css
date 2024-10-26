@@ -25,6 +25,7 @@ body
 h1,h2,h3,h4,h5,p
 {
     color: #ffffff;
+    text-shadow: 2px 2px rgb(0, 0, 0, 0.5);
 }
 
 a
@@ -82,6 +83,7 @@ h3
     font-family: "Simple Grunge", serif;
     font-size: 30px;
     text-align: left;
+    text-shadow: 4px 4px rgb(0, 0, 0, 0.5);
 }
 
 h1
@@ -90,6 +92,7 @@ h1
     font-size: 50px;
     text-align: left;
     padding-bottom: 50px;
+    text-shadow: 5px 5px rgb(0, 0, 0, 0.5);
 }
 
 h1.accent
@@ -106,6 +109,13 @@ p
     text-align: left;
 }
 
+p.contact
+{
+    font-size: 15px;
+    text-align: center;
+    padding-top: 100px;
+}
+
 h1.title
 {
     font-size: 150px;
@@ -115,31 +125,32 @@ h1.title
 .content-wrapper
 {
     display: flex;
-    flex-direction: row-reverse; /* Reverses the order, placing the image on the right */
+    flex-direction: row-reverse;
     align-items: flex-start;
 }
 
 .image-container
 {
-    flex: 0 0 50%; /* Image container takes 25% of the width */
-    margin-left: 0; /* Optional: space between the text and image */
-    margin-bottom: 10px
+    flex: 0 0 50%;
+    margin-left: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .img-responsive
 {
-    max-width: 100%; /* Ensures the image scales to fill 25% width */
+    max-width: 100%;
     height: fit-content;
 }
 
 .text-container
 {
-    flex: 0 0 50%; /* Text container takes 75% of the width */
+    flex: 0 0 50%;
 }
 
 .divider
 {
-    width: 25%;
+    width: 450px;
     height: 1px;
     margin-top: -50px;
     margin-bottom: 10px;
@@ -147,8 +158,8 @@ h1.title
 
 .section-divider
 {
-    width: 50%;
+    width: 150px;
     height: 1px;
-    margin-top: -50px;
+    margin-top: 0;
     margin-bottom: 0;
 }

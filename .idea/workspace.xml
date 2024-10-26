@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6197c56-b930-4710-8594-b9ebcb35ea25" name="Changes" comment="- Moved the directory of the css file.">
+    <list default="true" id="b6197c56-b930-4710-8594-b9ebcb35ea25" name="Changes" comment="- Updated the &quot;About Me&quot; section.&#10;- Updated the &quot;Skills &amp; Tools&quot; section.&#10;- Changed the fonts of headers to better reflect their positions in the hierarchy.&#10;- Revised link format with the &quot;Skills &amp; Tools&quot; section.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Background.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Background.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Dynamic_Interaction_System_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Dynamic_Interaction_System_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Grid_Inventory_System_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Grid_Inventory_System_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/LIMINAL_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Limb_Health_System_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Limb_Health_System_1.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/custom.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,7 +80,7 @@
       <workItem from="1729699148044" duration="6335000" />
       <workItem from="1729712467816" duration="10522000" />
       <workItem from="1729744558958" duration="1236000" />
-      <workItem from="1729941198631" duration="3820000" />
+      <workItem from="1729941198631" duration="7101000" />
     </task>
     <task id="LOCAL-00001" summary="- Reworked the majority of the webpage layout&#10;- Removed a lot of javascript and css that was not needed.">
       <option name="closed" value="true" />
@@ -135,7 +138,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729941373057</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="- Updated the &quot;About Me&quot; section.&#10;- Updated the &quot;Skills &amp; Tools&quot; section.&#10;- Changed the fonts of headers to better reflect their positions in the hierarchy.&#10;- Revised link format with the &quot;Skills &amp; Tools&quot; section.">
+      <option name="closed" value="true" />
+      <created>1729945114840</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1729945114840</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,6 +159,7 @@
     <MESSAGE value="- Attempted to fix white background again." />
     <MESSAGE value="- Changed the background settings yet again." />
     <MESSAGE value="- Moved the directory of the css file." />
-    <option name="LAST_COMMIT_MESSAGE" value="- Moved the directory of the css file." />
+    <MESSAGE value="- Updated the &quot;About Me&quot; section.&#10;- Updated the &quot;Skills &amp; Tools&quot; section.&#10;- Changed the fonts of headers to better reflect their positions in the hierarchy.&#10;- Revised link format with the &quot;Skills &amp; Tools&quot; section." />
+    <option name="LAST_COMMIT_MESSAGE" value="- Updated the &quot;About Me&quot; section.&#10;- Updated the &quot;Skills &amp; Tools&quot; section.&#10;- Changed the fonts of headers to better reflect their positions in the hierarchy.&#10;- Revised link format with the &quot;Skills &amp; Tools&quot; section." />
   </component>
 </project>
