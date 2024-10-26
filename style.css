@@ -18,7 +18,7 @@
 
 body
 {
-    font-family: "A FOR A", serif;
+    font-family: "Consolas", serif;
     background: rgb(0, 0, 0, 0);
 }
 
@@ -30,28 +30,26 @@ h1,h2,h3,h4,h5,p
 a
 {
     color: #ffffff;
-    text-decoration: none;
-    user-select: none;
 }
 
-a:link {
+a:link
+{
     color: #ffffff;
-    text-decoration: none;
 }
 
-a:visited {
+a:visited
+{
     color: #ffffff;
-    text-decoration: none;
 }
 
-a:hover {
+a:hover
+{
     color: #ffffff;
-    text-decoration: underline;
 }
 
-a:active {
+a:active
+{
     color: #ffffff;
-    text-decoration: none;
 }
 
 /* Section Settings */
@@ -63,8 +61,8 @@ a:active {
 
 .background
 {
-    background-size: cover;
-    background: #000000 url(/images/Background.png) no-repeat fixed center center;
+    background-image: url(/images/Background.png);
+    position: relative
 }
 
 h5
@@ -81,14 +79,17 @@ h4
 
 h3
 {
+    font-family: "Simple Grunge", serif;
     font-size: 30px;
     text-align: left;
 }
 
 h1
 {
+    font-family: "Simple Grunge", serif;
     font-size: 50px;
     text-align: left;
+    padding-bottom: 50px;
 }
 
 h1.accent
@@ -140,7 +141,7 @@ h1.title
 {
     width: 25%;
     height: 1px;
-    margin-top: 10px;
+    margin-top: -50px;
     margin-bottom: 10px;
 }
 
@@ -148,6 +149,6 @@ h1.title
 {
     width: 50%;
     height: 1px;
-    margin-top: 0;
+    margin-top: -50px;
     margin-bottom: 0;
 }

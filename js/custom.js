@@ -1,11 +1,13 @@
-$(document).ready(function()
+window.addEventListener("scroll", function()
 {
-	$('#fullpage').fullpage(
-		{
-			'autoScrolling': false,
-			'css3': true,
-			'navigation': false,
-			'scrollingSpeed': 600,
-			'verticalCentered': false,
-		});
+	const distance = window.scrollY;
+	const Elements = document.getElementsByClassName("background");
+
+	Elements.style.transform = `translateY(${distance}px)`;
+	Elements.style.transform = `translateY(${distance * 0.3}px)`;
+
+	setTimeout(() =>
+	{
+		document.querySelector("section h3").classList.add("animate-me");
+	}, 400);
 });
