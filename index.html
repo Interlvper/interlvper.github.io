@@ -1,257 +1,254 @@
 <!DOCTYPE html>
-<head>
-	<meta charset="utf-8">
+<html lang="en">
+	<head>
+		<!-- Meta Tags -->
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Tyler Myles – Game Programmer specializing in Unreal Engine, C++, and procedural systems.">
+		<title>Tyler Myles</title>
 
-	<title>Tyler Myles</title>
-	<meta name="keywords" content="">
-	<meta name="description" content="">
-	<meta name="Tyler Myles"  content="Website">
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<!-- Custom -->
+		<link rel="stylesheet" href="style.css">
+	</head>
 
-	<!-- Bootstrap -->
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/custom.js"></script>
-	<!-- Custom -->
-	<link rel="stylesheet" href="style.css">
-
-</head>
-
-<body>
-	<div class="background">
-		<div id="fullpage">
-		<!-- Home -->
-			<div id="home" class="section">
-				<div>
+	<body>
+		<div class="background">
+			<div id="fullpage">
+				<!-- Home -->
+				<div id="home" class="section">
 					<div>
-						<h1 class="title">Tyler Myles</h1>
-						<hr class="divider">
-						<h1 class="text-center">Game Programmer</h1>
-					</div>
-				</div>
-			</div>
-							
-			<!-- About Me -->
-			<div id="about" class="section">
-				<div class="container">
-					<div class="row">
 						<div>
-							<h1>// About Me</h1>
-						</div>
-					</div>
-
-					<div class="col-md-6 col-xs-11">
-						<h3 class="text-left">
-							Background
-						</h3>
-
-						<p class="text-left">
-							Video games have always been a central part of my life. This led me to pursue game development as soon as 
-							I realized that it was within my reach. Since then, I’ve gained hands-on experience with multiple game engines, 
-							including Unity, Unreal Engine, and Godot.
-							<br/>
-							<br/>
-							I earned my programming degree in 2017. This degree deepened my proficiency in programming languages such as Java, Python,
-							and C++. This academic foundation help expand my understanding of software engineering beyond game-specific applications.
-							<br/>
-							<br/>
-							Over time, I’ve developed a strong interest in procedural generation and data-driven design. I’m drawn to these areas 
-							because they offer rich opportunities for creative expression while presenting complex technical challenges that 
-							continually push me to grow as a programmer.
-						</p>
-					</div>
-
-					<div class="col-md-6 col-xs-11">
-						<h3 class="text-left">
-							Interests
-						</h3>
-
-						<p class="text-left">
-							- My favorite game genres are first-person shooters, dungeon crawlers, and hardcore survival games.
-							<br/>
-							- Simple mechanics that allow skill expression from the player are my favorite.
-							<br/>
-							- My most played game is Counter-Strike. When I played competitively, I reached the top 100 players in North America and helped bring my team into the top 50 teams in the region.
-							<br/>
-							- Other than gaming, music is a passion of mine and I have worked as a songwriter/producer. I also have played guitar for 14 years.
-							<br/>
-							- My favorite game of all time is Kenshi. I find the brutal, hardcore, and open world nature of the game incredibly appealing and rewarding.
-							<br/>
-						</p>
-					</div>
-				</div>
-			</div>
-
-			<!-- Skills & Tools -->
-			<div id="work" class="section">
-				<div class="container">
-					<div class="row">
-						<div>
-							<h1 class="section">// Skills & Tools</h1>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="col-md-4 col-xs-11">
-							<h3 class="text-left">
-								Unreal Engine
-							</h3>
-
-							<p class="text-left">
-								This my game engine of choice as I am most familiar with it. I am well versed in its Systems
-								and have worked extensively in both C++ and Blueprints for over seven years.
-							</p>
-						</div>
-
-						<div class="col-md-4 col-xs-11">
-							<h3 class="text-left">
-								Game Programming
-							</h3>
-
-							<p class="text-left">
-								I have produced a variety of gameplay systems for clients, the Unreal Engine Marketplace (now FAB), and my own personal use.
-								These systems include AI Pathfinders, Inventory Systems, Health Systems, Procedural Systems (Terrain, Levels, Weapons, etc),
-								Interaction Systems, Projectile Systems, Editor Tools, and much more.
-							</p>
-						</div>
-
-						<div class="col-md-4 col-xs-11">
-							<h3 class="text-left">
-								C++
-							</h3>
-
-							<p class="text-left">
-								This is my favorite programming language. I have used it for Unreal Engine, personal projects, school, and desktop applications. 
-								I find the language to be highly expressive and it allows me to optimize my code to a level that I cannot reach in other languages.
-							</p>
-						</div>
-
-					</div>
-				</div>
-			</div>
-
-			<!-- Portfolio -->
-			<div class="section" id="portfolio">
-				<div class="container">
-					<div class="row">
-						<div>
-							<h1>// Projects & Products</h1>
-						</div>
-					</div>
-
-					<!-- Grid Inventory System -->
-					<div class="content-wrapper">
-						<div class="image-container">
-							<img src="images/Grid_Inventory_System_1.png" class="img-responsive" alt="portfolio img">
-						</div>
-						<div class="text-container">
-							<h3 class="text-left">
-								Grid Inventory (Plugin)
-							</h3>
-
-							<p class="text-left">
-								- Event driven via interfaces and delegates.<br/>
-								- Includes a save system that utilizes serialization.<br/>
-								- Written in C++ and exposed to Blueprints.<br/>
-								- Built-in systems for item generation and spawning.<br/>
-								- Available on the Unreal Engine Marketplace.<br/>
-								- Includes an example project to get users started.<br/>
-							</p>
-
-							<div class="text-center">
-								<p>
-									<a href="https://drive.google.com/file/d/1hdD2WCTw4gL5RRzi_cnUELwFL-yqMejB/view?usp=share_link" target="_blank">Download Demo (Packaged)</a>
-								</p>
-								<p>
-									<a href="https://www.youtube.com/watch?v=6k9ikGthZRQ" target="_blank">Watch Showcase Video</a>
-								</p>
-								<p>
-									<a href="https://www.fab.com/listings/2ddd1c8f-ec78-477e-a4db-9afd10e41004" target="_blank">Visit FAB Page</a>
-								</p>
-							</div>
-						</div>
-					</div>
-
-					<!-- Limb Health System -->
-					<div class="content-wrapper">
-						<div class="image-container">
-							<img src="images/Limb_Health_System_1.png" class="img-responsive" alt="portfolio img">
-						</div>
-						<div class="text-container">
-							<h3 class="text-left">
-								Limb Health (Plugin)
-							</h3>
-
-							<p class="text-left">
-								- Only requires a physics asset from each skeletal mesh.<br/>
-								- Utilizes "Health Modifier" objects for all effects.<br/>
-								- Modular in design to allow for plug-and-play in existing projects.<br/>
-								- Documentation that walks through each aspect of the system.<br/>
-								- Written in C++ and exposed to Blueprints.<br/>
-								- Includes an example project to get users started.<br/>
-							</p>
-
-							<div class="text-center">
-								<p>
-									<a href="https://drive.google.com/file/d/1pXkvW0mOOYg-IpxOHMp0hdYwxGLESrtr/view?usp=share_link" target="_blank">Download Demo (Packaged)</a>
-								</p>
-								<p>
-									<a href="https://youtu.be/qXjaUo-ZE9o" target="_blank">Watch Showcase Video</a>
-								</p>
-								<p>
-									<a href="https://www.unrealengine.com/marketplace/en-US/product/5f75e1c3ca8140b89e222c1fac02ccd4" target="_blank">Visit FAB Page</a>
-								</p>
-							</div>
-						</div>
-					</div>
-
-					<!-- Dynamic Interaction System -->
-					<div class="content-wrapper">
-						<div class="image-container">
-							<img src="images/Dynamic_Interaction_System_1.png" class="img-responsive" alt="portfolio img">
-						</div>
-						<div class="text-container">
-							<h3 class="text-left">
-								Dynamic Interaction (Plugin)
-							</h3>
-
-							<p class="text-left">
-								- Written with a data-driven oriented design.<br/>
-								- Implements detailed and robust debugging tools.<br/>
-								- Game-ready widgets that can easily be modified.<br/>
-								- Written in C++ and exposed to Blueprints.<br/>
-								- Available on the Unreal Engine Marketplace.<br/>
-								- Includes an example project to get users started.<br/>
-							</p>
-
-							<div>
-								<p>
-									<a href="https://drive.google.com/file/d/1W7VgvZET-ap-okep-OHbDv49aBfbl7JW/view?usp=share_link" target="_blank">Download Demo (Packaged)</a>
-								</p>
-								<p>
-									<a href="https://youtu.be/3MiHo7gIBL0" target="_blank">Watch Showcase Video</a>
-								</p>
-								<p>
-									<a href="https://www.unrealengine.com/marketplace/en-US/product/798a0a0e0fb445f08ceefeb306e938ae" target="_blank">Visit FAB Page</a>
-								</p>
-							</div>
+							<h1 class="title">Tyler Myles</h1>
+							<hr class="divider">
+							<h1 class="text-center">Game Programmer</h1>
 						</div>
 					</div>
 				</div>
-
-				<!-- Contact Me -->
-				<div id="contact" class="section">
+								
+				<!-- About Me -->
+				<div id="about" class="section">
 					<div class="container">
 						<div class="row">
-							<address>
-								<p class="contact">If you would like to contact me, please email me at tylermyles98@gmail.com</p>
-							</address>
+							<div>
+								<h1>// About Me</h1>
+							</div>
+						</div>
+
+						<div class="col-md-6 col-xs-11">
+							<h3 class="text-left">
+								Background
+							</h3>
+
+							<p class="text-left">
+								Video games have always been a central part of my life. This led me to pursue game development as soon as 
+								I realized that it was within my reach. Since then, I’ve gained hands-on experience with multiple game engines, 
+								including Unity, Unreal Engine, and Godot.
+								<br/>
+								<br/>
+								I earned my programming degree in 2017. This degree deepened my proficiency in programming languages such as Java, Python,
+								and C++. This academic foundation help expand my understanding of software engineering beyond game-specific applications.
+								<br/>
+								<br/>
+								Over time, I’ve developed a strong interest in procedural generation and data-driven design. I’m drawn to these areas 
+								because they offer rich opportunities for creative expression while presenting complex technical challenges that 
+								continually push me to grow as a programmer.
+							</p>
+						</div>
+
+						<div class="col-md-6 col-xs-11">
+							<h3 class="text-left">
+								Interests
+							</h3>
+
+							<p class="text-left">
+								- My favorite game genres are first-person shooters, dungeon crawlers, and hardcore survival games.
+								<br/>
+								- Simple mechanics that allow skill expression from the player are my favorite.
+								<br/>
+								- My most played game is Counter-Strike. When I played competitively, I reached the top 100 players in North America and helped bring my team into the top 50 teams in the region.
+								<br/>
+								- Other than gaming, music is a passion of mine and I have worked as a songwriter/producer. I also have played guitar for 14 years.
+								<br/>
+								- My favorite game of all time is Kenshi. I find the brutal, hardcore, and open world nature of the game incredibly appealing and rewarding.
+								<br/>
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Skills & Tools -->
+				<div id="work" class="section">
+					<div class="container">
+						<div class="row">
+							<div>
+								<h1 class="section">// Skills & Tools</h1>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-4 col-xs-11">
+								<h3 class="text-left">
+									Unreal Engine
+								</h3>
+
+								<p class="text-left">
+									This my game engine of choice as I am most familiar with it. I am well versed in its Systems
+									and have worked extensively in both C++ and Blueprints for over seven years.
+								</p>
+							</div>
+
+							<div class="col-md-4 col-xs-11">
+								<h3 class="text-left">
+									Game Programming
+								</h3>
+
+								<p class="text-left">
+									I have produced a variety of gameplay systems for clients, the Unreal Engine Marketplace (now FAB), and my own personal use.
+									These systems include AI Pathfinders, Inventory Systems, Health Systems, Procedural Systems (Terrain, Levels, Weapons, etc),
+									Interaction Systems, Projectile Systems, Editor Tools, and much more.
+								</p>
+							</div>
+
+							<div class="col-md-4 col-xs-11">
+								<h3 class="text-left">
+									C++
+								</h3>
+
+								<p class="text-left">
+									This is my favorite programming language. I have used it for Unreal Engine, personal projects, school, and desktop applications. 
+									I find the language to be highly expressive and it allows me to optimize my code to a level that I cannot reach in other languages.
+								</p>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+				<!-- Portfolio -->
+				<div class="section" id="portfolio">
+					<div class="container">
+						<div class="row">
+							<div>
+								<h1>// Projects & Products</h1>
+							</div>
+						</div>
+
+						<!-- Grid Inventory System -->
+						<div class="content-wrapper">
+							<div class="image-container">
+								<img src="images/Grid_Inventory_System_1.png" class="img-responsive" alt="portfolio img">
+							</div>
+							<div class="text-container">
+								<h3 class="text-left">
+									Grid Inventory (Plugin)
+								</h3>
+
+								<p class="text-left">
+									- Event driven via interfaces and delegates.<br/>
+									- Includes a save system that utilizes serialization.<br/>
+									- Written in C++ and exposed to Blueprints.<br/>
+									- Built-in systems for item generation and spawning.<br/>
+									- Available on the Unreal Engine Marketplace.<br/>
+									- Includes an example project to get users started.<br/>
+								</p>
+
+								<div class="text-center">
+									<p>
+										<a href="https://drive.google.com/file/d/1hdD2WCTw4gL5RRzi_cnUELwFL-yqMejB/view?usp=share_link" target="_blank">Download Demo (Packaged)</a>
+									</p>
+									<p>
+										<a href="https://www.youtube.com/watch?v=6k9ikGthZRQ" target="_blank">Watch Showcase Video</a>
+									</p>
+									<p>
+										<a href="https://www.fab.com/listings/2ddd1c8f-ec78-477e-a4db-9afd10e41004" target="_blank">Visit FAB Page</a>
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Limb Health System -->
+						<div class="content-wrapper">
+							<div class="image-container">
+								<img src="images/Limb_Health_System_1.png" class="img-responsive" alt="portfolio img">
+							</div>
+							<div class="text-container">
+								<h3 class="text-left">
+									Limb Health (Plugin)
+								</h3>
+
+								<p class="text-left">
+									- Only requires a physics asset from each skeletal mesh.<br/>
+									- Utilizes "Health Modifier" objects for all effects.<br/>
+									- Modular in design to allow for plug-and-play in existing projects.<br/>
+									- Documentation that walks through each aspect of the system.<br/>
+									- Written in C++ and exposed to Blueprints.<br/>
+									- Includes an example project to get users started.<br/>
+								</p>
+
+								<div class="text-center">
+									<p>
+										<a href="https://drive.google.com/file/d/1pXkvW0mOOYg-IpxOHMp0hdYwxGLESrtr/view?usp=share_link" target="_blank">Download Demo (Packaged)</a>
+									</p>
+									<p>
+										<a href="https://youtu.be/qXjaUo-ZE9o" target="_blank">Watch Showcase Video</a>
+									</p>
+									<p>
+										<a href="https://www.unrealengine.com/marketplace/en-US/product/5f75e1c3ca8140b89e222c1fac02ccd4" target="_blank">Visit FAB Page</a>
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Dynamic Interaction System -->
+						<div class="content-wrapper">
+							<div class="image-container">
+								<img src="images/Dynamic_Interaction_System_1.png" class="img-responsive" alt="portfolio img">
+							</div>
+							<div class="text-container">
+								<h3 class="text-left">
+									Dynamic Interaction (Plugin)
+								</h3>
+
+								<p class="text-left">
+									- Written with a data-driven oriented design.<br/>
+									- Implements detailed and robust debugging tools.<br/>
+									- Game-ready widgets that can easily be modified.<br/>
+									- Written in C++ and exposed to Blueprints.<br/>
+									- Available on the Unreal Engine Marketplace.<br/>
+									- Includes an example project to get users started.<br/>
+								</p>
+
+								<div>
+									<p>
+										<a href="https://drive.google.com/file/d/1W7VgvZET-ap-okep-OHbDv49aBfbl7JW/view?usp=share_link" target="_blank">Download Demo (Packaged)</a>
+									</p>
+									<p>
+										<a href="https://youtu.be/3MiHo7gIBL0" target="_blank">Watch Showcase Video</a>
+									</p>
+									<p>
+										<a href="https://www.unrealengine.com/marketplace/en-US/product/798a0a0e0fb445f08ceefeb306e938ae" target="_blank">Visit FAB Page</a>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Contact Me -->
+					<div id="contact" class="section">
+						<div class="container">
+							<div class="row">
+								<address>
+									<p class="contact">If you would like to contact me, please email me at tylermyles98@gmail.com</p>
+								</address>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-</body>
+	</body>
+</html>
