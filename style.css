@@ -61,10 +61,10 @@ a:active
     padding-bottom: 100px;
 }
 
-.background
-{
-    background: url(/images/Background.png) no-repeat center center fixed;
+.background {
+    background: url(/images/Background.png) no-repeat center center;
     background-size: cover;
+    min-height: 100vh; /* Make sure the background element fills the viewport */
 }
 
 h5
