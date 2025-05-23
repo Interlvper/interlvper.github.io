@@ -1,24 +1,11 @@
 @font-face
 {
     font-family: "Simple Grunge";
-    src:url('fonts/Simple Grunge.otf');
-}
-
-@font-face
-{
-    font-family: "RuasMediumGrunge";
-    src:url('fonts/RuasMediumGrunge.ttf');
-}
-
-@font-face
-{
-    font-family: "A FOR A";
-    src:url('fonts/A FOR A.ttf');
+    src: url('../fonts/SimpleGrunge.otf');
 }
 
 body 
 {
-    font-family: "Arial", serif;
     background-image: url(../images/Background.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -112,12 +99,13 @@ a:active
 
 h1 
 {
-    font-family: "Simple Grunge", serif;
+    font-family: "SimpleGrunge";
+    font-weight: normal;
+    font-style: normal;
     font-size: 50px;
     text-align: left;
     padding-bottom: 50px;
     text-shadow: 5px 5px rgb(0, 0, 0, 0.5);
-    color: white;
 }
 
 h1.accent
@@ -130,11 +118,10 @@ h1.accent
 
 h3
 {
-    font-family: "Simple Grunge", serif;
+    font-family: "SimpleGrunge";
     font-size: 30px;
     text-align: left;
     text-shadow: 4px 4px rgb(0, 0, 0, 0.5);
-    color: white;
 }
 
 h4
