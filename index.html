@@ -57,8 +57,8 @@ body::before {
       0deg,
       transparent,
       transparent 2px,
-      rgba(255, 59, 59, 0.1) 2px,
-      rgba(255, 59, 59, 0.1) 4px
+      rgba(255, 59, 59, 0.2) 2px,
+      rgba(255, 59, 59, 0.2) 4px
     );
   opacity: 0.8;
   animation: scanline-move 3s linear infinite;
@@ -254,7 +254,19 @@ code, pre, .terminal-text {
 }
 
 .btn-project.disabled {
-  opacity: 0.6;
+  background: transparent;
+  border: 2px solid var(--phosphor-red);
+  color: var(--phosphor-red);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 12px 24px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 59, 59, 0.5);
+  position: relative;
+  z-index: 10;
   cursor: not-allowed;
 }
 
@@ -314,7 +326,6 @@ code, pre, .terminal-text {
   position: relative;
   z-index: 10;
   overflow: hidden;
-  animation: glitch 8s infinite ease-in-out;
 }
 
 .card:hover {
@@ -392,7 +403,7 @@ a:hover {
   border: 2px solid #111;
 }
 
-/* Lists */
+/* Lists */ 
 ul {
   list-style: none;
   padding-left: 0;
@@ -402,14 +413,6 @@ ul li {
   position: relative;
   padding-left: 20px;
   margin-bottom: 8px;
-}
-
-ul li::before {
-  content: ">";
-  position: absolute;
-  left: 0;
-  color: var(--phosphor-red);
-  font-weight: bold;
 }
 
 /* Responsive adjustments */
@@ -455,10 +458,10 @@ ul li::before {
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#work">Skills</a></li>
-        <li class="nav-item"><a class="nav-link" href="#portfolio">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">> About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#work">> Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#portfolio">> Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">> Contact</a></li>
       </ul>
     </div>
   </div>
@@ -468,7 +471,7 @@ ul li::before {
 <header class="section" id="home">
   <div class="container" data-aos="fade-in">
     <h1 class="display-1 fw-bold glitch">Tyler Myles</h1>
-    <h3>Game Programmer</h3>
+    <h3>Gameplay Programmer</h3>
   </div>
   <div class="scroll-arrow" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
       <i class="fas fa-chevron-down"></i>
@@ -482,38 +485,19 @@ ul li::before {
     <div class="row">
       <div class="col-md-6 mb-4" data-aos="fade-up">
         <h3>Background</h3>
-        <p>Video games have always been a central part of my life. This led me to pursue game development as soon as 
-			I realized that it was within my reach. Since then, I’ve gained hands-on experience with multiple game engines, 
-			including Unity, Unreal Engine, and Godot.
-			<br/>
-			<br/>
-			I earned my programming degree in 2017. This degree deepened my proficiency in programming languages such as Java, Python,
-			and C++. This academic foundation help expand my understanding of software engineering beyond game-specific applications.
-			<br/>
-			<br/>
-			Over time, I’ve developed a strong interest in procedural generation and data-driven design. I’m drawn to these areas 
-			because they offer rich opportunities for creative expression while presenting complex technical challenges that 
-			continually push me to grow as a programmer.</p>
+        <p>
+          I'm a Game Programmer with a passion for creating immersive systems that blend technical depth with creative expression.
+          With a degree in computer science and 7 years of experience in Unreal Engine, I bring a versatile and performance focused 
+          mindset to every project. My foundation in C++ and Blueprints equips me to tackle challenges at both the gameplay and systems level.
+        </p>
       </div>
       <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
         <h3>Interests</h3>
-        <ul>
-          - My favorite game genres are first-person shooters, dungeon crawlers, and hardcore survival games.
-			<br/>
-			<br/>
-			- Simple mechanics that allow skill expression from the player are my favorite.
-			<br/>
-			<br/>
-			- My most played game is Counter-Strike. When I played competitively, I reached the top 100 players in North America and helped bring my team into the top 50 teams in the region.
-			<br/>
-			<br/>
-			- Other than gaming, music is a passion of mine and I have worked as a songwriter/producer. I also have played guitar for 14 years.
-			<br/>
-			<br/>
-			- My favorite game of all time is Kenshi. I find the brutal, hardcore, and open world nature of the game incredibly appealing and rewarding.
-			<br/>
-			<br/>
-        </ul>
+        <p>
+          When I am not programming, you can often find me playing games, or creating music. For the past 6 years, I have worked as a 
+          producer and songwriter and worked with some notable artists in both rock and metal music. A few of my favorite games are
+          Kenshi, Counter-Strike, Rimworld, Dark and Darker, and Smite.
+        </p>
       </div>
     </div>
   </div>
@@ -525,20 +509,25 @@ ul li::before {
     <h1 class="section-title" data-aos="fade-right">> Skills & Tools</h1>
     <div class="row">
       <div class="col-md-4" data-aos="fade-up">
-        <h3>Unreal Engine</h3>
-        <p>This my game engine of choice as I am most familiar with it. I am well versed in its Systems
-									and have worked extensively in both C++ and Blueprints for over seven years.</p>
-      </div>
-      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-        <h3>Game Programming</h3>
-        <p>I have produced a variety of gameplay systems for clients, the Unreal Engine Marketplace (now FAB), and my own personal use.
-									These systems include AI Pathfinders, Inventory Systems, Health Systems, Procedural Systems (Terrain, Levels, Weapons, etc),
-									Interaction Systems, Projectile Systems, Editor Tools, and much more.</p>
+        <h3>Unreal Engine 5</h3>
+        <p>
+          This is my game engine of choice. I started with UE 4.20 and have stuck with it ever since. I have a strong understanding of
+          it's core systems such as Blueprints, Material Graphs, Gameplay Framework, Modules, Replication, and the Asset Manager.
+        </p>
       </div>
       <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-        <h3>C++</h3>
-        <p>This is my favorite programming language. I have used it for Unreal Engine, personal projects, school, and desktop applications. 
-									I find the language to be highly expressive and it allows me to optimize my code to a level that I cannot reach in other languages.</p>
+        <h3>Scripting & Logic</h3>
+        <p>
+          Within Unreal Engine 5, I have a strong understanding of both C++ and Blueprints. I have extensive experience creating new or exposing 
+          existing C++ systems to Blueprints for artists and game designers. 
+        </p>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <h3>Gameplay Systems</h3>
+        <p>
+          I have produced a variety of gameplay systems for clients, the Unreal Engine Marketplace (now FAB), and my own personal use.
+					This includes systems for Pathfinding, Inventories, Health, Level Generation, Player Interaction, Projectiles, and various Editor Tools.
+        </p>
       </div>
     </div>
   </div>
@@ -552,8 +541,7 @@ ul li::before {
     <!-- Grid Inventory System -->
     <div class="row g-4 mb-5" data-aos="fade-up">
       <div class="col-lg-6">
-        <div class="card text-light h-100">
-          <img src="images/Grid_Inventory_System_1.png" class="card-img-top" alt="Grid Inventory System" style="height: 250px; object-fit: cover;">
+        <div class="card text-light h-80">
           <div class="card-body">
             <h3 class="card-title">Grid Inventory System</h3>
             <div class="features-list mb-3">
@@ -561,7 +549,7 @@ ul li::before {
               <p>• Includes a save system that utilizes serialization</p>
               <p>• Written in C++ and exposed to Blueprints</p>
               <p>• Built-in systems for item generation and spawning</p>
-              <p>• Available on the Fab</p>
+              <p>• Available for purchase on FAB</p>
               <p>• Includes an example project to get users started</p>
             </div>
             <div class="project-links">
@@ -575,16 +563,14 @@ ul li::before {
       
       <!-- Limb Health System -->
       <div class="col-lg-6">
-        <div class="card text-light h-100">
-          <img src="images/Limb_Health_System_1.png" class="card-img-top" alt="Limb Health System" style="height: 250px; object-fit: cover;">
+        <div class="card text-light h-80">
           <div class="card-body">
             <h3 class="card-title">Limb Health System</h3>
             <div class="features-list mb-3">
               <p>• Only requires a physics asset from each skeletal mesh</p>
               <p>• Utilizes "Health Modifier" objects for all effects</p>
-              <p>• Available on the Fab</p>
+              <p>• Available for purchase on FAB</p>
               <p>• Modular design for plug-and-play in existing projects</p>
-              <p>• Documentation walks through each aspect of the system</p>
               <p>• Written in C++ and exposed to Blueprints</p>
               <p>• Includes an example project to get users started</p>
             </div>
@@ -601,8 +587,7 @@ ul li::before {
     <!-- Dynamic Interaction System & Vision Camera System -->
     <div class="row g-4 mb-5" data-aos="fade-up" data-aos-delay="100">
       <div class="col-lg-6">
-        <div class="card text-light h-100">
-          <img src="images/Dynamic_Interaction_System_1.png" class="card-img-top" alt="Dynamic Interaction System" style="height: 250px; object-fit: cover;">
+        <div class="card text-light h-80">
           <div class="card-body">
             <h3 class="card-title">Dynamic Interaction System</h3>
             <div class="features-list mb-3">
@@ -610,7 +595,7 @@ ul li::before {
               <p>• Implements detailed and robust debugging tools</p>
               <p>• Game-ready widgets that can easily be modified</p>
               <p>• Written in C++ and exposed to Blueprints</p>
-              <p>• Available on the FAB</p>
+              <p>• Available for purchase on FAB</p>
               <p>• Includes an example project to get users started</p>
             </div>
             <div class="project-links">
@@ -624,8 +609,7 @@ ul li::before {
       
       <!-- Vision Camera System -->
       <div class="col-lg-6">
-        <div class="card text-light h-100">
-          <img src="images/Vision.png" class="card-img-top" alt="Vision Camera System" style="height: 250px; object-fit: cover;">
+        <div class="card text-light h-80">
           <div class="card-body">
             <h3 class="card-title">Vision - Camera System</h3>
             <div class="features-list mb-3">
@@ -633,7 +617,7 @@ ul li::before {
               <p>• Implements dynamic DOF based on camera focus</p>
               <p>• Game-ready camera presets that allow for plug-and-play</p>
               <p>• Written in C++ and exposed to Blueprints</p>
-              <p>• Available on the FAB</p>
+              <p>• Available for purchase on FAB</p>
               <p>• Includes an example project to demo the plugin</p>
             </div>
             <div class="project-links">
@@ -648,8 +632,7 @@ ul li::before {
     <!-- WIP Projects -->
     <div class="row g-4" data-aos="fade-up" data-aos-delay="200">
       <div class="col-lg-6">
-        <div class="card text-light h-100">
-          <img src="images/Bullet.png" class="card-img-top" alt="Bullet Projectile System" style="height: 250px; object-fit: cover;">
+        <div class="card text-light h-80">
           <div class="card-body">
             <h3 class="card-title">Bullet - Projectile System <span class="badge bg-warning text-dark">WIP</span></h3>
             <div class="features-list mb-3">
@@ -669,8 +652,7 @@ ul li::before {
       
       <!-- Atmosphere Pressure System -->
       <div class="col-lg-6">
-        <div class="card text-light h-100">
-          <img src="images/Atmosphere.png" class="card-img-top" alt="Atmosphere Pressure System" style="height: 250px; object-fit: cover;">
+        <div class="card text-light h-80">
           <div class="card-body">
             <h3 class="card-title">Atmosphere - Pressure System <span class="badge bg-warning text-dark">WIP</span></h3>
             <div class="features-list mb-3">
