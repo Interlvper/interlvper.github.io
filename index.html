@@ -1,328 +1,729 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<!-- Meta Tags -->
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="Tyler Myles – Game Programmer specializing in Unreal Engine, C++, and procedural systems.">
-		<title>Tyler Myles</title>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Tyler Myles – Game Programmer specializing in Unreal Engine, C++, and procedural systems." />
+<title>Tyler Myles – Game Programmer</title>
 
-		<!-- Bootstrap -->
-		<link rel="stylesheet" href="css/style.css">
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<!-- Custom -->
-		<link rel="stylesheet" href="style.css">
-	</head>
+<!-- Fonts & Bootstrap -->
+<link href="https://fonts.googleapis.com/css2?family=Quantico:wght@400;700&family=Roboto+Mono&display=swap" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
-	<body>
-		<div class="background">
-			<div id="fullpage">
-				<!-- Home -->
-				<div id="home" class="section">
-					<div>
-						<div>
-							<h1 class="title">Tyler Myles</h1>
-							<hr class="divider">
-							<h1 class="text-center">Game Programmer</h1>
-						</div>
-					</div>
-				</div>
-								
-				<!-- About Me -->
-				<div id="about" class="section">
-					<div class="container">
-						<div class="row">
-							<div>
-								<h1>// About Me</h1>
-							</div>
-						</div>
+<!-- AOS for animations -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
 
-						<div class="col-md-6 col-xs-11">
-							<h3 class="text-left">
-								Background
-							</h3>
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
 
-							<p class="text-left">
-								Video games have always been a central part of my life. This led me to pursue game development as soon as 
-								I realized that it was within my reach. Since then, I’ve gained hands-on experience with multiple game engines, 
-								including Unity, Unreal Engine, and Godot.
-								<br/>
-								<br/>
-								I earned my programming degree in 2017. This degree deepened my proficiency in programming languages such as Java, Python,
-								and C++. This academic foundation help expand my understanding of software engineering beyond game-specific applications.
-								<br/>
-								<br/>
-								Over time, I’ve developed a strong interest in procedural generation and data-driven design. I’m drawn to these areas 
-								because they offer rich opportunities for creative expression while presenting complex technical challenges that 
-								continually push me to grow as a programmer.
-							</p>
-						</div>
+<style>
+:root {
+  --phosphor-red: #ff3b3b; /* Main red glow */
+  --phosphor-dim: #b32626; /* Dimmer red */
+  --bg-color: #0a0a0a; /* Dark CRT background */
+  --card-bg: #151515;
+  --muted: #777;
+}
 
-						<div class="col-md-6 col-xs-11">
-							<h3 class="text-left">
-								Interests
-							</h3>
+/* Base Styles */
+body {
+  font-family: 'Quantico', sans-serif;
+  font-size: 18px;
+  background-color: var(--bg-color);
+  color: var(--phosphor-red);
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow-x: hidden;
+  text-shadow: 0 0 4px rgba(255, 59, 59, 0.6), 0 0 8px rgba(255, 59, 59, 0.4);
+  animation: noise 0.2s infinite;
+}
 
-							<p class="text-left">
-								- My favorite game genres are first-person shooters, dungeon crawlers, and hardcore survival games.
-								<br/>
-								- Simple mechanics that allow skill expression from the player are my favorite.
-								<br/>
-								- My most played game is Counter-Strike. When I played competitively, I reached the top 100 players in North America and helped bring my team into the top 50 teams in the region.
-								<br/>
-								- Other than gaming, music is a passion of mine and I have worked as a songwriter/producer. I also have played guitar for 14 years.
-								<br/>
-								- My favorite game of all time is Kenshi. I find the brutal, hardcore, and open world nature of the game incredibly appealing and rewarding.
-								<br/>
-							</p>
-						</div>
-					</div>
-				</div>
+/* Enhanced Scanline Overlay */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  background: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 59, 59, 0.1) 2px,
+      rgba(255, 59, 59, 0.1) 4px
+    );
+  opacity: 0.8;
+  animation: scanline-move 3s linear infinite;
+}
 
-				<!-- Skills & Tools -->
-				<div id="work" class="section">
-					<div class="container">
-						<div class="row">
-							<div>
-								<h1 class="section">// Skills & Tools</h1>
-							</div>
-						</div>
+/* Additional scanline layer for more depth */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+  background: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 1px,
+      rgba(0, 0, 0, 0.1) 1px,
+      rgba(0, 0, 0, 0.1) 2px
+    );
+  animation: scanline-move-alt 2s linear infinite reverse;
+}
 
-						<div class="row">
-							<div class="col-md-4 col-xs-11">
-								<h3 class="text-left">
-									Unreal Engine
-								</h3>
+/* Vignette for old-screen feel */
+html::before {
+  content: "";
+  position: fixed;
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(circle, rgba(0,0,0,0) 70%, rgba(0,0,0,0.8) 100%);
+}
 
-								<p class="text-left">
-									This my game engine of choice as I am most familiar with it. I am well versed in its Systems
-									and have worked extensively in both C++ and Blueprints for over seven years.
-								</p>
-							</div>
+/* Scanline Animations */
+@keyframes scanline-move {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(4px); }
+}
 
-							<div class="col-md-4 col-xs-11">
-								<h3 class="text-left">
-									Game Programming
-								</h3>
+@keyframes scanline-move-alt {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(2px); }
+}
 
-								<p class="text-left">
-									I have produced a variety of gameplay systems for clients, the Unreal Engine Marketplace (now FAB), and my own personal use.
+/* Scroll Arrow */
+.scroll-arrow {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--phosphor-red);
+  font-size: 2rem;
+  cursor: pointer;
+  animation: bounce 2s infinite;
+  z-index: 100;
+  text-shadow: 0 0 10px var(--phosphor-red);
+  transition: all 0.3s ease;
+}
+
+.scroll-arrow:hover {
+  color: #fff;
+  text-shadow: 0 0 20px var(--phosphor-red);
+  transform: translateX(-50%) scale(1.2);
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(-5px);
+  }
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--phosphor-red);
+  text-shadow: 0 0 10px rgba(255, 59, 59, 0.8), 0 0 18px rgba(255, 59, 59, 0.5);
+  position: relative;
+  z-index: 10;
+}
+
+p, a, li {
+  position: relative;
+  z-index: 10;
+}
+
+/* Section styles */
+.section {
+  padding: 100px 0;
+  position: relative;
+  z-index: 5;
+}
+
+/* Section Titles Flickering Glow */
+.section-title {
+  position: relative;
+  animation: flicker-glow 6s infinite alternate;
+  margin-bottom: 2rem;
+}
+
+@keyframes flicker-glow {
+  from {
+    text-shadow:
+      0 0 10px var(--phosphor-red),
+      0 0 18px var(--phosphor-red);
+  }
+  to {
+    text-shadow:
+      0 0 12px var(--phosphor-red),
+      0 0 22px var(--phosphor-red);
+  }
+}
+
+/* Glitch Effect */
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-3px, 3px);
+  }
+  40% {
+    transform: translate(-3px, -3px);
+  }
+  60% {
+    transform: translate(3px, 3px);
+  }
+  80% {
+    transform: translate(3px, -3px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+.glitch {
+  position: relative;
+  color: var(--phosphor-red);
+  animation: glitch 8s infinite ease-in-out;
+  display: inline-block;
+}
+
+/* Retro Terminal Font */
+code, pre, .terminal-text {
+  font-family: 'Roboto Mono', monospace;
+  color: var(--phosphor-red);
+  text-shadow: 0 0 5px var(--phosphor-red);
+}
+
+/* Blinking Cursor */
+.blinking-cursor {
+  font-weight: 900;
+  animation: blink 1s step-start 0s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* Buttons with glowing outline */
+.btn-project {
+  background: transparent;
+  border: 2px solid var(--phosphor-red);
+  color: var(--phosphor-red);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 12px 24px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 59, 59, 0.5);
+  position: relative;
+  z-index: 10;
+}
+
+.btn-project:hover, .btn-project:focus {
+  background: var(--phosphor-red);
+  color: #0a0a0a;
+  box-shadow: 0 0 20px var(--phosphor-red), 0 0 40px var(--phosphor-red);
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.btn-project.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Navbar - Always visible */
+.navbar {
+  background-color: rgba(17, 17, 17, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(255, 59, 59, 0.3);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  opacity: 1;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.nav-link {
+  color: var(--phosphor-red) !important;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 5px rgba(255, 59, 59, 0.5);
+}
+
+.nav-link:hover {
+  color: #fff !important;
+  text-shadow: 0 0 10px var(--phosphor-red);
+}
+
+/* Hero section */
+#home {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#home h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+#home h3 {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+/* Cards - Remove flashing effects */
+.card {
+  background: rgba(21, 21, 21, 0.9) !important;
+  border: 3px solid var(--phosphor-red) !important;
+  box-shadow: 0 0 15px rgba(255, 59, 59, 0.3) !important;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+  animation: glitch 8s infinite ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(255, 59, 59, 0.6) !important;
+}
+
+.card-title {
+  color: var(--phosphor-red);
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  display: inline-block;
+}
+
+.card-img-top {
+  border-bottom: 3px solid var(--phosphor-red);
+  transition: all 0.3s ease;
+}
+
+
+/* Project Features List */
+.features-list {
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+.features-list p {
+  margin-bottom: 0.3rem;
+  color: rgba(255, 59, 59, 0.85);
+}
+
+/* Project Links */
+.project-links {
+  margin-top: auto;
+}
+
+.btn-project.btn-sm {
+  font-size: 0.8rem;
+  padding: 8px 16px;
+  letter-spacing: 1px;
+}
+
+/* WIP Badge */
+.badge.bg-warning {
+  background-color: var(--phosphor-red) !important;
+  color: #0a0a0a !important;
+  font-size: 0.7rem;
+  text-shadow: none;
+}
+
+/* Links */
+a {
+  color: var(--phosphor-red);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: #fff;
+  text-shadow: 0 0 10px var(--phosphor-red);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--phosphor-red);
+  border-radius: 10px;
+  border: 2px solid #111;
+}
+
+/* Lists */
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+}
+
+ul li::before {
+  content: ">";
+  position: absolute;
+  left: 0;
+  color: var(--phosphor-red);
+  font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #home h1 {
+    font-size: 2.5rem;
+  }
+  
+  #home h3 {
+    font-size: 1.5rem;
+  }
+  
+  .section {
+    padding: 60px 0;
+  }
+}
+
+/* Fix for text visibility */
+.container, .row, .col-md-4, .col-md-6 {
+  position: relative;
+  z-index: 10;
+}
+
+/* Animation delays for AOS */
+[data-aos] {
+  opacity: 0;
+  transition-property: opacity, transform;
+}
+
+[data-aos].aos-animate {
+  opacity: 1;
+}
+</style>
+</head>
+
+<body>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand glitch" href="#home"><i class="fas fa-terminal"></i> Tyler Myles</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#work">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#portfolio">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="section" id="home">
+  <div class="container" data-aos="fade-in">
+    <h1 class="display-1 fw-bold glitch">Tyler Myles</h1>
+    <h3>Game Programmer</h3>
+  </div>
+  <div class="scroll-arrow" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
+      <i class="fas fa-chevron-down"></i>
+    </div>
+</header>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container">
+    <h1 class="section-title" data-aos="fade-right">> About Me</h1>
+    <div class="row">
+      <div class="col-md-6 mb-4" data-aos="fade-up">
+        <h3>Background</h3>
+        <p>Video games have always been a central part of my life. This led me to pursue game development as soon as 
+			I realized that it was within my reach. Since then, I’ve gained hands-on experience with multiple game engines, 
+			including Unity, Unreal Engine, and Godot.
+			<br/>
+			<br/>
+			I earned my programming degree in 2017. This degree deepened my proficiency in programming languages such as Java, Python,
+			and C++. This academic foundation help expand my understanding of software engineering beyond game-specific applications.
+			<br/>
+			<br/>
+			Over time, I’ve developed a strong interest in procedural generation and data-driven design. I’m drawn to these areas 
+			because they offer rich opportunities for creative expression while presenting complex technical challenges that 
+			continually push me to grow as a programmer.</p>
+      </div>
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <h3>Interests</h3>
+        <ul>
+          - My favorite game genres are first-person shooters, dungeon crawlers, and hardcore survival games.
+			<br/>
+			<br/>
+			- Simple mechanics that allow skill expression from the player are my favorite.
+			<br/>
+			<br/>
+			- My most played game is Counter-Strike. When I played competitively, I reached the top 100 players in North America and helped bring my team into the top 50 teams in the region.
+			<br/>
+			<br/>
+			- Other than gaming, music is a passion of mine and I have worked as a songwriter/producer. I also have played guitar for 14 years.
+			<br/>
+			<br/>
+			- My favorite game of all time is Kenshi. I find the brutal, hardcore, and open world nature of the game incredibly appealing and rewarding.
+			<br/>
+			<br/>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="section" id="work">
+  <div class="container">
+    <h1 class="section-title" data-aos="fade-right">> Skills & Tools</h1>
+    <div class="row">
+      <div class="col-md-4" data-aos="fade-up">
+        <h3>Unreal Engine</h3>
+        <p>This my game engine of choice as I am most familiar with it. I am well versed in its Systems
+									and have worked extensively in both C++ and Blueprints for over seven years.</p>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <h3>Game Programming</h3>
+        <p>I have produced a variety of gameplay systems for clients, the Unreal Engine Marketplace (now FAB), and my own personal use.
 									These systems include AI Pathfinders, Inventory Systems, Health Systems, Procedural Systems (Terrain, Levels, Weapons, etc),
-									Interaction Systems, Projectile Systems, Editor Tools, and much more.
-								</p>
-							</div>
+									Interaction Systems, Projectile Systems, Editor Tools, and much more.</p>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <h3>C++</h3>
+        <p>This is my favorite programming language. I have used it for Unreal Engine, personal projects, school, and desktop applications. 
+									I find the language to be highly expressive and it allows me to optimize my code to a level that I cannot reach in other languages.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-							<div class="col-md-4 col-xs-11">
-								<h3 class="text-left">
-									C++
-								</h3>
+<!-- PORTFOLIO -->
+<section class="section" id="portfolio">
+  <div class="container">
+    <h1 class="section-title" data-aos="fade-right">> Projects & Products</h1>
+    
+    <!-- Grid Inventory System -->
+    <div class="row g-4 mb-5" data-aos="fade-up">
+      <div class="col-lg-6">
+        <div class="card text-light h-100">
+          <img src="images/Grid_Inventory_System_1.png" class="card-img-top" alt="Grid Inventory System" style="height: 250px; object-fit: cover;">
+          <div class="card-body">
+            <h3 class="card-title">Grid Inventory System</h3>
+            <div class="features-list mb-3">
+              <p>• Event driven via interfaces and delegates</p>
+              <p>• Includes a save system that utilizes serialization</p>
+              <p>• Written in C++ and exposed to Blueprints</p>
+              <p>• Built-in systems for item generation and spawning</p>
+              <p>• Available on the Fab</p>
+              <p>• Includes an example project to get users started</p>
+            </div>
+            <div class="project-links">
+              <a href="https://drive.google.com/file/d/1hdD2WCTw4gL5RRzi_cnUELwFL-yqMejB/view?usp=share_link" target="_blank" class="btn btn-project btn-sm me-2 mb-2">Download Demo</a>
+              <a href="https://www.youtube.com/watch?v=6k9ikGthZRQ" target="_blank" class="btn btn-project btn-sm me-2 mb-2">Watch Video</a>
+              <a href="https://www.fab.com/listings/2ddd1c8f-ec78-477e-a4db-9afd10e41004" target="_blank" class="btn btn-project btn-sm mb-2">FAB Page</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Limb Health System -->
+      <div class="col-lg-6">
+        <div class="card text-light h-100">
+          <img src="images/Limb_Health_System_1.png" class="card-img-top" alt="Limb Health System" style="height: 250px; object-fit: cover;">
+          <div class="card-body">
+            <h3 class="card-title">Limb Health System</h3>
+            <div class="features-list mb-3">
+              <p>• Only requires a physics asset from each skeletal mesh</p>
+              <p>• Utilizes "Health Modifier" objects for all effects</p>
+              <p>• Available on the Fab</p>
+              <p>• Modular design for plug-and-play in existing projects</p>
+              <p>• Documentation walks through each aspect of the system</p>
+              <p>• Written in C++ and exposed to Blueprints</p>
+              <p>• Includes an example project to get users started</p>
+            </div>
+            <div class="project-links">
+              <a href="https://drive.google.com/file/d/1pXkvW0mOOYg-IpxOHMp0hdYwxGLESrtr/view?usp=share_link" target="_blank" class="btn btn-project btn-sm me-2 mb-2">Download Demo</a>
+              <a href="https://youtu.be/qXjaUo-ZE9o" target="_blank" class="btn btn-project btn-sm me-2 mb-2">Watch Video</a>
+              <a href="https://www.unrealengine.com/marketplace/en-US/product/5f75e1c3ca8140b89e222c1fac02ccd4" target="_blank" class="btn btn-project btn-sm mb-2">FAB Page</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-								<p class="text-left">
-									This is my favorite programming language. I have used it for Unreal Engine, personal projects, school, and desktop applications. 
-									I find the language to be highly expressive and it allows me to optimize my code to a level that I cannot reach in other languages.
-								</p>
-							</div>
+    <!-- Dynamic Interaction System & Vision Camera System -->
+    <div class="row g-4 mb-5" data-aos="fade-up" data-aos-delay="100">
+      <div class="col-lg-6">
+        <div class="card text-light h-100">
+          <img src="images/Dynamic_Interaction_System_1.png" class="card-img-top" alt="Dynamic Interaction System" style="height: 250px; object-fit: cover;">
+          <div class="card-body">
+            <h3 class="card-title">Dynamic Interaction System</h3>
+            <div class="features-list mb-3">
+              <p>• Written with a data-driven oriented design</p>
+              <p>• Implements detailed and robust debugging tools</p>
+              <p>• Game-ready widgets that can easily be modified</p>
+              <p>• Written in C++ and exposed to Blueprints</p>
+              <p>• Available on the FAB</p>
+              <p>• Includes an example project to get users started</p>
+            </div>
+            <div class="project-links">
+              <a href="https://drive.google.com/file/d/1W7VgvZET-ap-okep-OHbDv49aBfbl7JW/view?usp=share_link" target="_blank" class="btn btn-project btn-sm me-2 mb-2">Download Demo</a>
+              <a href="https://youtu.be/3MiHo7gIBL0" target="_blank" class="btn btn-project btn-sm me-2 mb-2">Watch Video</a>
+              <a href="https://www.unrealengine.com/marketplace/en-US/product/798a0a0e0fb445f08ceefeb306e938ae" target="_blank" class="btn btn-project btn-sm mb-2">FAB Page</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Vision Camera System -->
+      <div class="col-lg-6">
+        <div class="card text-light h-100">
+          <img src="images/Vision.png" class="card-img-top" alt="Vision Camera System" style="height: 250px; object-fit: cover;">
+          <div class="card-body">
+            <h3 class="card-title">Vision - Camera System</h3>
+            <div class="features-list mb-3">
+              <p>• A customizable camera system for headbob and other features</p>
+              <p>• Implements dynamic DOF based on camera focus</p>
+              <p>• Game-ready camera presets that allow for plug-and-play</p>
+              <p>• Written in C++ and exposed to Blueprints</p>
+              <p>• Available on the FAB</p>
+              <p>• Includes an example project to demo the plugin</p>
+            </div>
+            <div class="project-links">
+              <a href="https://drive.google.com/file/d/1s7Ousw0TFYg7GS-6kWHbDpAMhilVDRL0/view?usp=sharing" target="_blank" class="btn btn-project btn-sm me-2 mb-2">Download Demo</a>
+              <a href="https://www.fab.com/listings/16c8f014-4fec-41df-82b2-18bf1fd7f7e0" target="_blank" class="btn btn-project btn-sm mb-2">FAB Page</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-						</div>
-					</div>
-				</div>
+    <!-- WIP Projects -->
+    <div class="row g-4" data-aos="fade-up" data-aos-delay="200">
+      <div class="col-lg-6">
+        <div class="card text-light h-100">
+          <img src="images/Bullet.png" class="card-img-top" alt="Bullet Projectile System" style="height: 250px; object-fit: cover;">
+          <div class="card-body">
+            <h3 class="card-title">Bullet - Projectile System <span class="badge bg-warning text-dark">WIP</span></h3>
+            <div class="features-list mb-3">
+              <p>• Allows for detailed simulation of thousands of projectiles at once</p>
+              <p>• Supports penetration, ricochets, and rotational tumble</p>
+              <p>• Ran on a separate thread to reduce performance impact</p>
+              <p>• Written in C++ and exposed to Blueprints</p>
+              <p>• Will be available on FAB</p>
+              <p>• Easy to customize parameters via Data Assets</p>
+            </div>
+            <div class="project-links">
+              <span class="btn btn-project btn-sm disabled">Coming Soon</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Atmosphere Pressure System -->
+      <div class="col-lg-6">
+        <div class="card text-light h-100">
+          <img src="images/Atmosphere.png" class="card-img-top" alt="Atmosphere Pressure System" style="height: 250px; object-fit: cover;">
+          <div class="card-body">
+            <h3 class="card-title">Atmosphere - Pressure System <span class="badge bg-warning text-dark">WIP</span></h3>
+            <div class="features-list mb-3">
+              <p>• Allows for detailed simulation of atmospheric pressure</p>
+              <p>• Enables explosives to have "shockwaves" that can apply damage</p>
+              <p>• Ran on a separate thread to reduce performance impact</p>
+              <p>• Written in C++ and exposed to Blueprints</p>
+              <p>• Generates a voxel based grid to calculate volumetric propagation</p>
+              <p>• Will be available on FAB</p>
+            </div>
+            <div class="project-links">
+              <span class="btn btn-project btn-sm disabled">Coming Soon</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-				<!-- Portfolio -->
-				<div class="section" id="portfolio">
-					<div class="container">
-						<div class="row">
-							<div>
-								<h1>// Projects & Products</h1>
-							</div>
-						</div>
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="container">
+    <h1 class="section-title" data-aos="fade-right">> Contact Me</h1>
+    <p>If you'd like to reach out, email me at <a href="mailto:tylermyles98@gmail.com" class="glitch">tylermyles98@gmail.com<span class="blinking-cursor">_</span></a></p>
+  </div>
+</section>
 
-						<!-- Grid Inventory System -->
-						<div class="content-wrapper">
-							<div class="image-container">
-								<img src="images/Grid_Inventory_System_1.png" class="img-responsive" alt="portfolio img">
-							</div>
-							<div class="text-container">
-								<h3 class="text-left">
-									Grid Inventory System
-								</h3>
+<script>
+  // Initialize AOS when page loads
+  document.addEventListener('DOMContentLoaded', function() {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: 'ease-in-out',
+      offset: 100
+    });
+  });
 
-								<p class="text-left">
-									- Event driven via interfaces and delegates.<br/>
-									- Includes a save system that utilizes serialization.<br/>
-									- Written in C++ and exposed to Blueprints.<br/>
-									- Built-in systems for item generation and spawning.<br/>
-									- Available on the Fab.<br/>
-									- Includes an example project to get users started.<br/>
-								</p>
+  // Smooth scrolling for navigation links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+</script>
 
-								<div class="text-center">
-									<p>
-										<a href="https://drive.google.com/file/d/1hdD2WCTw4gL5RRzi_cnUELwFL-yqMejB/view?usp=share_link" target="_blank">Download Demo (Packaged)</a>
-									</p>
-									<p>
-										<a href="https://www.youtube.com/watch?v=6k9ikGthZRQ" target="_blank">Watch Showcase Video</a>
-									</p>
-									<p>
-										<a href="https://www.fab.com/listings/2ddd1c8f-ec78-477e-a4db-9afd10e41004" target="_blank">Visit FAB Page</a>
-									</p>
-								</div>
-							</div>
-						</div>
-
-						<!-- Limb Health System -->
-						<div class="content-wrapper">
-							<div class="image-container">
-								<img src="images/Limb_Health_System_1.png" class="img-responsive" alt="portfolio img">
-							</div>
-							<div class="text-container">
-								<h3 class="text-left">
-									Limb Health System
-								</h3>
-
-								<p class="text-left">
-									- Only requires a physics asset from each skeletal mesh.<br/>
-									- Utilizes "Health Modifier" objects for all effects.<br/>
-									- Available on the Fab.<br/>
-									- Modular in design to allow for plug-and-play in existing projects.<br/>
-									- Documentation that walks through each aspect of the system.<br/>
-									- Written in C++ and exposed to Blueprints.<br/>
-									- Includes an example project to get users started.<br/>
-								</p>
-
-								<div class="text-center">
-									<p>
-										<a href="https://drive.google.com/file/d/1pXkvW0mOOYg-IpxOHMp0hdYwxGLESrtr/view?usp=share_link" target="_blank">Download Demo (Packaged)</a>
-									</p>
-									<p>
-										<a href="https://youtu.be/qXjaUo-ZE9o" target="_blank">Watch Showcase Video</a>
-									</p>
-									<p>
-										<a href="https://www.unrealengine.com/marketplace/en-US/product/5f75e1c3ca8140b89e222c1fac02ccd4" target="_blank">Visit FAB Page</a>
-									</p>
-								</div>
-							</div>
-						</div>
-
-						<!-- Dynamic Interaction System -->
-						<div class="content-wrapper">
-							<div class="image-container">
-								<img src="images/Dynamic_Interaction_System_1.png" class="img-responsive" alt="portfolio img">
-							</div>
-							<div class="text-container">
-								<h3 class="text-left">
-									Dynamic Interaction System
-								</h3>
-
-								<p class="text-left">
-									- Written with a data-driven oriented design.<br/>
-									- Implements detailed and robust debugging tools.<br/>
-									- Game-ready widgets that can easily be modified.<br/>
-									- Written in C++ and exposed to Blueprints.<br/>
-									- Available on the FAB.<br/>
-									- Includes an example project to get users started.<br/>
-								</p>
-
-								<div>
-									<p>
-										<a href="https://drive.google.com/file/d/1W7VgvZET-ap-okep-OHbDv49aBfbl7JW/view?usp=share_link" target="_blank">Download Demo (Packaged)</a>
-									</p>
-									<p>
-										<a href="https://youtu.be/3MiHo7gIBL0" target="_blank">Watch Showcase Video</a>
-									</p>
-									<p>
-										<a href="https://www.unrealengine.com/marketplace/en-US/product/798a0a0e0fb445f08ceefeb306e938ae" target="_blank">Visit FAB Page</a>
-									</p>
-								</div>
-							</div>
-						</div>
-						
-						<!-- Vision - Camera System -->
-						<div class="content-wrapper">
-							<div class="image-container">
-								<img src="images/Vision.png" class="img-responsive" alt="portfolio img">
-							</div>
-							<div class="text-container">
-								<h3 class="text-left">
-									Vision - Camera System
-								</h3>
-
-								<p class="text-left">
-									- A customizable camera system for headbob and other features.<br/>
-									- Implements dynamic DOF based on camera focus.<br/>
-									- Game-ready camera presets that allow for plug-and-play.<br/>
-									- Written in C++ and exposed to Blueprints.<br/>
-									- Available on the FAB.<br/>
-									- Includes an example project to demo the plugin.<br/>
-								</p>
-
-								<div>
-									<p>
-										<a href="https://drive.google.com/file/d/1s7Ousw0TFYg7GS-6kWHbDpAMhilVDRL0/view?usp=sharing" target="_blank">Download Demo (Packaged)</a>
-									</p>
-									<p>
-										<a href="https://www.fab.com/listings/16c8f014-4fec-41df-82b2-18bf1fd7f7e0" target="_blank">Visit FAB Page</a>
-									</p>
-								</div>
-							</div>
-						</div>
-						
-						<!-- Bullet - Projectile System -->
-						<div class="content-wrapper">
-							<div class="image-container">
-								<img src="images/Bullet.png" class="img-responsive" alt="portfolio img">
-							</div>
-							<div class="text-container">
-								<h3 class="text-left">
-									Bullet - Projectile System (WIP)
-								</h3>
-
-								<p class="text-left">
-									- Allows for detailed simulation of thousands of projectiles at once.<br/>
-									- Supports penetration, ricochets, and rotational tumble.<br/>
-									- Ran on a separate thread to reduce performance impact.<br/>
-									- Written in C++ and exposed to Blueprints.<br/>
-									- Will be availible on FAB.<br/>
-									- Easy to customize parameters via Data Assets.<br/>
-								</p>
-							</div>
-						</div>
-						
-						<!-- Atmosphere - Pressure System -->
-						<div class="content-wrapper">
-							<div class="image-container">
-								<img src="images/Atmosphere.png" class="img-responsive" alt="portfolio img">
-							</div>
-							<div class="text-container">
-								<h3 class="text-left">
-									Atmosphere - Pressure System (WIP)
-								</h3>
-
-								<p class="text-left">
-									- Allows for detailed simulation of atmospheric pressure.<br/>
-									- Enables explosives to have "shockwaves" that can apply damage.<br/>
-									- Ran on a separate thread to reduce performance impact.<br/>
-									- Written in C++ and exposed to Blueprints.<br/>
-									- Generates a voxel based grid to calculate volumetric propegation.<br/>
-									- Will be availible on FAB.<br/>
-								</p>
-							</div>
-						</div>
-					</div>
-
-					<!-- Contact Me -->
-					<div id="contact" class="section">
-						<div class="container">
-							<div class="row">
-								<address>
-									<p class="contact">If you would like to contact me, please email me at tylermyles98@gmail.com</p>
-								</address>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</body>
+</body>
 </html>
