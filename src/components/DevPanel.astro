@@ -1,0 +1,32 @@
+---
+import { GAMES } from '../data/games';
+import { PLUGINS } from '../data/plugins';
+import GameShowcase from './GameShowcase.astro';
+import PluginCard from './PluginCard.astro';
+import GitHubRepos from './GitHubRepos.astro';
+---
+
+<section id="panel-dev" class="panel">
+    <div class="panel-header">
+        <h2 class="panel-title dev-title">Game Development</h2>
+    </div>
+
+    <h3 id="dev-games" class="section-heading" style="color: var(--accent-dev);">Independent Games & Demos</h3>
+    {GAMES.map(game => (
+        <GameShowcase game={game} />
+    ))}
+
+    <h3 id="dev-plugins" class="section-heading" style="color: var(--accent-dev);">Published Plugins</h3>
+    <div class="fab-grid" style="margin-bottom: 80px;">
+        {PLUGINS.map(plugin => (
+            <PluginCard plugin={plugin} />
+        ))}
+    </div>
+
+    <h3 id="git-repos" class="section-heading" style="color: var(--accent-github);">Github Repositories</h3>
+    <GitHubRepos />
+
+    <div class="centered-action" style="margin-bottom: 80px;">
+        <a href="https://github.com/Interlvper" target="_blank" class="btn-action btn-github btn-lg">View Full GitHub Profile</a>
+    </div>
+</section>

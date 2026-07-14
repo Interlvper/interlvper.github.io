@@ -1,0 +1,51 @@
+---
+// Home panel — landing hero and overview columns
+---
+
+<section id="panel-home" class="panel active">
+    <div class="landing-hero">
+        <h1>
+            <span style="color: var(--fg-main); text-shadow: 0 0 25px rgba(232, 224, 208, 0.4);">Development</span><br>
+            <span style="color: var(--fg-dim);">& Sound</span>
+        </h1>
+        <p class="landing-hero-subtitle">
+            These are my passions. Whether you are looking for a programmer or a producer, I deliver
+            production-ready results.
+        </p>
+    </div>
+
+    <div class="home-columns">
+        <div>
+            <h2 class="home-section-title" style="color: var(--accent-dev);">Game Development</h2>
+            <p class="home-section-desc">
+                I specialize in Unreal Engine. While my primary expertise lies
+                in C++, my background as a solo developer and contractor ensures proficiency across the entire
+                Unreal Engine ecosystem. From Blueprints and custom material nodes to technical art tools and
+                prediction rollback systems.
+            </p>
+            <a class="btn-action btn-dev" data-panel-link="dev">Explore Development</a>
+        </div>
+        <div>
+            <h2 class="home-section-title" style="color: var(--accent-prod);">Audio Production</h2>
+            <p class="home-section-desc">
+                I provide modern metal mixing, mastering, composition, and songwriting. Every track is
+                designed for impact, quailty, and industry streaming standards. Whether it's streaming on
+                Spotify,
+                Apple Music, or YouTube, your music will sound loud and professional.
+            </p>
+            <a class="btn-action btn-prod" data-panel-link="prod">Explore Audio</a>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Wire up panel-link buttons on the home page
+    document.querySelectorAll<HTMLElement>('[data-panel-link]').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const target = btn.dataset.panelLink;
+            if (target && typeof (window as any).switchPanel === 'function') {
+                (window as any).switchPanel(target);
+            }
+        });
+    });
+</script>

@@ -1,0 +1,47 @@
+---
+import { CONTACT_INQUIRIES } from '../data/contact';
+---
+
+<section id="panel-contact" class="panel">
+    <div class="panel-header">
+        <h2 class="panel-title contact-title">Get in Touch</h2>
+        <p class="panel-subtitle">Reach out directly to discuss your next project.</p>
+    </div>
+
+    <div class="data-grid" style="margin-bottom: 40px;">
+        <div id="contact-direct" class="data-block contact-glow" style="border-left: 5px solid var(--accent-contact);">
+            <h3 class="contact-block-title">Direct Email</h3>
+            <p class="contact-block-desc">If you are interested in
+                contacting me about any of my services, or have some questions, this is the best way! I
+                typically respond within
+                twelve hours.</p>
+            <a href="mailto:tylermyles98@gmail.com" class="contact-primary-link">tylermyles98@gmail.com</a>
+            <div class="contact-footer-note">Based in Santa Fe, NM (MDT/UTC-7)</div>
+        </div>
+
+        <div id="contact-social" class="data-block contact-glow" style="border-left: 5px solid var(--accent-contact);">
+            <h3 class="contact-block-title">Other Platforms</h3>
+            <p class="contact-block-desc">I am also highly active
+                across a variety of developer and creator marketplaces where you can view my work and verified
+                client history.</p>
+            <div class="contact-buttons">
+                <a href="https://github.com/Interlvper" target="_blank" class="btn-action btn-github">GitHub Profile</a>
+                <a href="https://www.fiverr.com/users/tylerjmyles" target="_blank" class="btn-action btn-fiverr">Fiverr Profile</a>
+            </div>
+            <div class="contact-footer-note">My response times here may be closer to 24 hours.</div>
+        </div>
+    </div>
+
+    <div id="contact-details" class="data-grid" style="margin-bottom: 60px;">
+        {CONTACT_INQUIRIES.map(inq => (
+            <div class={`data-block ${inq.glowClass}`}>
+                <h3 class="contact-inquiry-title" style={`color: ${inq.accentColor};`}>{inq.title}</h3>
+                <ul class="deliverables-list" style="margin-bottom: 0;">
+                    {inq.items.map(item => (
+                        <li>{item}</li>
+                    ))}
+                </ul>
+            </div>
+        ))}
+    </div>
+</section>

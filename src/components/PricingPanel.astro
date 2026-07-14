@@ -1,0 +1,33 @@
+---
+import { PRICE_CATEGORIES } from '../data/pricing';
+import PriceCategory from './PriceCategory.astro';
+---
+
+<section id="panel-pricing" class="panel">
+    <div class="panel-header">
+        <h2 class="panel-title pricing-title">Pricing & Rates</h2>
+        <p class="panel-subtitle">Transparent Logistics. All listed rates are average estimates.</p>
+    </div>
+
+    <div class="data-grid" style="align-items: stretch;">
+        {PRICE_CATEGORIES.map(cat => (
+            <PriceCategory category={cat} />
+        ))}
+    </div>
+
+    <div class="centered-action" style="margin-top: 50px;">
+        <a class="btn-action btn-contact btn-xl" data-panel-link="contact">Contact</a>
+    </div>
+</section>
+
+<script>
+    // Wire up panel-link button in the pricing panel
+    document.querySelectorAll<HTMLElement>('#panel-pricing [data-panel-link]').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const target = btn.dataset.panelLink;
+            if (target && typeof (window as any).switchPanel === 'function') {
+                (window as any).switchPanel(target);
+            }
+        });
+    });
+</script>

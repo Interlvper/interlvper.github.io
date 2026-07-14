@@ -1,0 +1,16 @@
+---
+import type { Review } from '../data/reviews';
+
+interface Props {
+  review: Review;
+}
+
+const { review } = Astro.props;
+---
+
+<div class="review-card prod-review">
+    <div class="stars">★★★★★</div>
+    <p class="review-text">"{review.text}"</p>
+    <div class="review-author">{review.author}</div>
+    <a href="https://www.fiverr.com/users/tylerjmyles" target="_blank" class="verify-link">↗ Verified on Fiverr</a>
+</div>

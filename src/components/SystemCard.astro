@@ -1,0 +1,15 @@
+---
+import type { GameSystem } from '../data/games';
+
+interface Props {
+  title: string;
+  desc: string;
+}
+
+const { title, desc } = Astro.props;
+---
+
+<div class="system-card">
+    <h6 class="system-card-title">{title}</h6>
+    <p>{desc}</p>
+</div>

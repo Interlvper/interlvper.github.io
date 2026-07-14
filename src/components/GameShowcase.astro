@@ -1,0 +1,70 @@
+---
+import type { Game } from '../data/games';
+import SystemCard from './SystemCard.astro';
+
+interface Props {
+  game: Game;
+}
+
+const { game } = Astro.props;
+---
+
+<div id={`${game.id}-game-container`} class="data-block dev-glow game-showcase">
+    <div class="game-layout">
+        <div class="game-info">
+            <div class="game-title-row">
+                <h4 class="game-title">{game.title} ({game.year})</h4>
+            </div>
+            <p class="game-desc" set:html={game.description} />
+            <div class="game-buttons">
+                {game.buttons.map(btn => (
+                    <a href={btn.url} target="_blank" class="btn-action btn-dev btn-game">{btn.text}</a>
+                ))}
+            </div>
+        </div>
+        <div class="game-media">
+            <div class="game-media-frame">
+                <a href={game.primaryUrl} target="_blank">
+                    {game.fallbackImage ? (
+                        <img
+                            src={game.image}
+                            alt={game.imageAlt}
+                            class="game-cover-img"
+                            data-fallback={game.fallbackImage}
+                        />
+                    ) : (
+                        <img
+                            src={game.image}
+                            alt={game.imageAlt}
+                            class="game-cover-img"
+                        />
+                    )}
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id={`${game.id}-more-info`} class="systems-wrapper">
+        <div class="systems-panel">
+            <h5 class="systems-panel-title">Core Systems</h5>
+            <div class="systems-grid">
+                {game.systems.map(sys => (
+                    <SystemCard title={sys.title} desc={sys.desc} />
+                ))}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Handle image fallback for games with a data-fallback attribute
+    document.querySelectorAll<HTMLImageElement>('img[data-fallback]').forEach(img => {
+        img.addEventListener('error', () => {
+            const fallback = img.dataset.fallback;
+            if (fallback) {
+                img.src = fallback;
+                img.removeAttribute('data-fallback');
+            }
+        });
+    });
+</script>

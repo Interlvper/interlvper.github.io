@@ -1,0 +1,80 @@
+---
+import { PROD_DELIVERABLES, PROD_SERVICES } from '../data/production';
+import { REVIEWS } from '../data/reviews';
+import ReviewCard from './ReviewCard.astro';
+---
+
+<section id="panel-prod" class="panel">
+    <div class="panel-header">
+        <h2 class="panel-title prod-title">Modern Metal</h2>
+    </div>
+
+    <div id="prod-ghostwriting" class="data-block prod-glow" style="grid-column: 1 / -1; margin-bottom: 80px;">
+        <h3 class="prod-hero-title">The Complete Package</h3>
+        <p class="prod-hero-desc">
+            With over seven years of professional experience in modern metal, I specialize in providing complete
+            songwriting,
+            mixing, and mastering services. From the initial idea to the final master, I work with you to ensure
+            the final product is something that we are both proud of.
+        </p>
+
+        <div class="prod-services-grid">
+            <div>
+                <h4 class="prod-sub-heading">Full Song</h4>
+                <p class="prod-service-desc">This
+                    is an all-in-one, premium service designed for artists, vocalists, and content creators who
+                    need industry quality music. Upon delivery, you retain <strong>100% Commercial
+                        Rights</strong> and complete ownership of the track and its copyrights.</p>
+                <a href="#" class="btn-action btn-prod" data-panel-link="contact">Inquire About Composition</a>
+            </div>
+            <div class="inner-card" style="padding: 25px;">
+                <h4 class="prod-sub-heading">Exact Deliverables</h4>
+                <ul class="deliverables-list">
+                    {PROD_DELIVERABLES.map(d => (
+                        <li set:html={d} />
+                    ))}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="prod-engineering" class="data-grid" style="margin-bottom: 60px;">
+        {PROD_SERVICES.map(svc => (
+            <div class="data-block prod-glow">
+                <h3>{svc.title}</h3>
+                <p>{svc.desc}</p>
+                <a href="#" class="btn-action btn-prod" data-panel-link="contact">{svc.btnText}</a>
+            </div>
+        ))}
+    </div>
+
+    <div id="prod-fiverr" class="data-block marketplace-block">
+        <h3>Marketplace Booking</h3>
+        <p>While I prefer establishing direct, organic relationships with my clients, I also maintain an active,
+            Top Rated profile on Fiverr for clients who prefer to utilize a third-party platform. All reviews
+            displayed
+            below are verified through this platform or other previous work.</p>
+        <a href="https://www.fiverr.com/users/tylerjmyles" target="_blank" class="btn-action btn-fiverr">View Fiverr Profile</a>
+    </div>
+
+    <h3 id="prod-feedback" class="section-heading" style="color: var(--fg-main);">Client Feedback</h3>
+    <p style="color: var(--fg-dim); margin-bottom: 30px;">Organic reviews from artists, bands, and creators I've engineered for.</p>
+    <div class="review-grid">
+        {REVIEWS.map(review => (
+            <ReviewCard review={review} />
+        ))}
+    </div>
+</section>
+
+<script>
+    // Wire up panel-link buttons in the prod panel
+    document.querySelectorAll<HTMLElement>('#panel-prod [data-panel-link]').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const target = btn.dataset.panelLink;
+            if (target && typeof (window as any).switchPanel === 'function') {
+                (window as any).switchPanel(target);
+            }
+        });
+    });
+</script>
