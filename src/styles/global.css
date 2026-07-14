@@ -943,17 +943,18 @@ ul {
 /* --- CORE SYSTEMS PANELS --- */
 .systems-wrapper {
     width: 100%;
-    margin-top: 40px;
+    margin-top: 45px;
     text-align: left;
 }
 
 .systems-panel {
-    background: rgba(8, 6, 5, 0.95);
+    background: linear-gradient(145deg, rgba(14, 11, 9, 0.95) 0%, rgba(8, 6, 5, 0.98) 100%);
     border: 1px solid var(--border-hard);
     border-left: 4px solid var(--accent-dev);
-    padding: 35px;
+    padding: 36px 40px;
     position: relative;
-    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 153, 0, 0.1);
+    border-radius: 4px;
 }
 
 .systems-panel-title {
@@ -962,39 +963,80 @@ ul {
     color: var(--accent-dev);
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-bottom: 25px;
+    margin-bottom: 28px;
     font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.systems-panel-title::before {
+    content: '//';
+    color: rgba(255, 153, 0, 0.5);
+    font-weight: 400;
+}
+
+.systems-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 24px;
+    color: var(--fg-dim);
+    font-size: 0.95rem;
+    line-height: 1.65;
+}
+
+.system-card {
+    background: rgba(22, 17, 14, 0.65);
+    padding: 24px 26px;
+    border: 1px solid rgba(54, 44, 32, 0.4);
+    border-top: 2px solid rgba(255, 153, 0, 0.25);
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.system-card:hover {
+    transform: translateY(-3px);
+    background: rgba(28, 21, 17, 0.85);
+    border-color: rgba(255, 153, 0, 0.5);
+    border-top-color: var(--accent-dev);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6), 0 0 15px rgba(255, 153, 0, 0.08);
+}
+
+.system-card-header {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.systems-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 24px;
-    color: var(--fg-dim);
-    font-size: 0.95rem;
-    line-height: 1.7;
-}
-
-.system-card {
-    background: rgba(20, 16, 13, 0.6);
-    padding: 20px;
-    border: 1px solid rgba(54, 44, 32, 0.4);
+.system-card-indicator {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background-color: var(--accent-dev);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--accent-dev);
+    flex-shrink: 0;
 }
 
 .system-card-title {
     color: var(--fg-main);
     font-family: var(--font-mono);
-    font-size: 0.85rem;
+    font-size: 0.9rem;
+    font-weight: 700;
     text-transform: uppercase;
-    margin-bottom: 12px;
+    margin: 0;
     letter-spacing: 1px;
+    line-height: 1.3;
 }
 
-.system-card p {
-    margin-bottom: 0;
+.system-card-desc {
+    margin: 0;
+    color: var(--fg-dim);
+    font-size: 0.92rem;
+    line-height: 1.65;
 }
 
 /* --- MARKETPLACE BLOCK --- */
