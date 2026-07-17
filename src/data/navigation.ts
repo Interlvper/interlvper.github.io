@@ -1,6 +1,7 @@
 export interface NavItem {
   label: string;
   target: string;
+  href: string;
 }
 
 export interface SocialLink {
@@ -10,11 +11,11 @@ export interface SocialLink {
 }
 
 export const NAV_ITEMS: NavItem[] = [
-  { label: 'Overview', target: 'home' },
-  { label: 'Game Development', target: 'dev' },
-  { label: 'Audio Production', target: 'prod' },
-  { label: 'Pricing & Rates', target: 'pricing' },
-  { label: 'Contact', target: 'contact' }
+  { label: 'Overview', target: 'home', href: '#panel-home' },
+  { label: 'Game Development', target: 'dev', href: '#panel-dev' },
+  { label: 'Audio Production', target: 'prod', href: '#panel-prod' },
+  { label: 'Pricing & Rates', target: 'pricing', href: '#panel-pricing' },
+  { label: 'Contact', target: 'contact', href: '#panel-contact' }
 ];
 
 export const SOCIAL_LINKS: SocialLink[] = [

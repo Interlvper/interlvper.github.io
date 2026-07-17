@@ -8,16 +8,16 @@ interface Props {
 const { plugin } = Astro.props;
 ---
 
-<div class="fab-card">
+<div class="nested-block">
     <div>
-        <div class="fab-title">{plugin.title}</div>
-        <div class="fab-desc">{plugin.desc}</div>
+        <h4>{plugin.title}</h4>
+        <p>{plugin.desc}</p>
     </div>
     <div>
         <div class="fab-logo"><span>{plugin.tech}</span></div>
         <div class="fab-buttons">
-            <a href={plugin.fabUrl} target="_blank" class="btn-action btn-dev btn-sm">View on FAB</a>
-            <a href={plugin.demoUrl} target="_blank" class="btn-action btn-dev btn-sm">Download Demo</a>
+            <a href={plugin.fabUrl} target="_blank" class="btn-action">View on FAB</a>
+            <a href={plugin.demoUrl} target="_blank" class="btn-action">Download Demo</a>
         </div>
     </div>
 </div>

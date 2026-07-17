@@ -2,7 +2,7 @@
 // GitHub repos are fetched client-side since the API is dynamic
 ---
 
-<div id="github-repos-container" class="data-grid" style="margin-bottom: 60px;">
+<div id="github-repos-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 20px;">
     <p id="github-loading" style="color: var(--accent-pricing); font-family: var(--font-mono); animation: blink 1s infinite;">
         Fetching network data from GitHub API...
     </p>
@@ -29,17 +29,17 @@
 
             originalRepos.forEach((repo: any) => {
                 const repoEl = document.createElement('div');
-                repoEl.className = 'data-block git-glow inner-card';
+                repoEl.className = 'nested-block';
                 const description = repo.description || 'No description provided for this repository.';
 
                 repoEl.innerHTML = `
-                    <h3 style="color: var(--accent-github); text-transform: none; font-size: 1.25rem;">${repo.name}</h3>
+                    <h4 style="text-transform: none;">${repo.name}</h4>
                     <div style="margin-bottom: 15px; font-family: var(--font-mono); font-size: 0.85rem; color: var(--fg-main);">
                         <span style="color: var(--accent-dev); margin-right: 15px; text-shadow: 0 0 8px rgba(0, 208, 255, 0.4);">★ ${repo.stargazers_count}</span>
                         ${repo.language ? `<span>${repo.language}</span>` : ''}
                     </div>
                     <p>${description}</p>
-                    <a href="${repo.html_url}" target="_blank" class="btn-action btn-github" style="margin-top: auto;">View Source</a>
+                    <a href="${repo.html_url}" target="_blank" class="btn-action" style="margin-top: auto;">View Source</a>
                 `;
                 container.appendChild(repoEl);
             });
@@ -49,5 +49,6 @@
         }
     }
 
-    fetchGitHubRepos();
+    document.addEventListener('DOMContentLoaded', fetchGitHubRepos);
+    document.addEventListener('astro:page-load', fetchGitHubRepos);
 </script>

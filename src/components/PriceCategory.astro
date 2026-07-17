@@ -9,8 +9,8 @@ const { category } = Astro.props;
 ---
 
 <div class="data-block pricing-glow">
-    <h3 style="color: var(--accent-pricing);">{category.title}</h3>
-    <p style="margin-bottom: 20px;">{category.description}</p>
+    <h3>{category.title}</h3>
+    <p style="margin-bottom: 20px; min-height: 140px; flex-grow: 0;">{category.description}</p>
     <div class="price-list">
         {category.items.map(item => (
             <div class="price-item">

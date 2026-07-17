@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+---
+
+<Layout 
+    title="Tyler Myles | 404 Page Not Found"
+    description="The requested page could not be found. Return to Tyler Myles portfolio overview."
+>
+    <Header />
+    <main class="viewport">
+        <section id="panel-404" class="panel active" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; min-height: 70vh;">
+            <h1 style="font-size: 6rem; color: var(--accent-prod); font-weight: 800; line-height: 1; margin-bottom: 20px;">404</h1>
+            <h2 style="font-size: 2rem; margin-bottom: 20px;">Page Not Found</h2>
+            <p style="color: var(--fg-dim); max-width: 500px; margin-bottom: 40px; line-height: 1.6;">
+                The signal has been lost in the void. Check the URL or navigate back to the home overview.
+            </p>
+            <a href="/" class="btn-action">Return to Overview</a>
+        </section>
+    </main>
+</Layout>

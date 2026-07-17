@@ -1,0 +1,102 @@
+---
+// Dock.astro — Modern floating bottom dock navigation capsule
+import { NAV_ITEMS } from '../data/navigation';
+---
+
+<div class="dock-wrapper" id="floating-dock">
+    <nav class="dock-nav" aria-label="Main Navigation Dock">
+        {NAV_ITEMS.map((item) => {
+            const isHome = item.target === 'home';
+            return (
+                <a href={item.href} class={`dock-item${isHome ? ' active' : ''}`} data-target={item.target}>
+                    <span class="dock-label">{item.label}</span>
+                </a>
+            );
+        })}
+    </nav>
+</div>
+
+<script>
+    function initDock() {
+        const dockItems = document.querySelectorAll('.dock-item');
+        const sections = Array.from(document.querySelectorAll('section[id^="panel-"]'));
+
+        if (dockItems.length === 0 || sections.length === 0) return;
+
+        // Smooth scroll interaction
+        dockItems.forEach(item => {
+            item.removeEventListener('click', handleDockClick);
+            item.addEventListener('click', handleDockClick);
+        });
+
+        function handleDockClick(e: Event) {
+            const currentItem = e.currentTarget as HTMLAnchorElement;
+            const href = currentItem.getAttribute('href');
+            if (href && href.startsWith('#')) {
+                e.preventDefault();
+                const targetEl = document.querySelector(href);
+                if (targetEl) {
+                    targetEl.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // Update URL without jump
+                    history.pushState(null, '', href);
+                }
+            }
+        }
+
+        // Scroll spy calculation
+        function scrollSpy() {
+            let currentSectionId = '';
+            
+            // Check if user is scrolled to the absolute bottom (with 80px threshold)
+            if ((window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 80) {
+                currentSectionId = sections[sections.length - 1]?.id || '';
+            } else {
+                sections.forEach(section => {
+                    const rect = section.getBoundingClientRect();
+                    // Active when the section occupies the upper-middle of screen
+                    if (rect.top <= window.innerHeight * 0.35) {
+                        currentSectionId = section.id;
+                    }
+                });
+            }
+
+            if (!currentSectionId && sections.length > 0) {
+                currentSectionId = sections[0].id;
+            }
+
+            dockItems.forEach(item => {
+                const targetHref = item.getAttribute('href');
+                if (targetHref === `#${currentSectionId}`) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+
+            const dockNav = document.querySelector('.dock-nav');
+            const atlas = document.querySelector('.atlas');
+            const glowClasses = ['glow-home', 'glow-dev', 'glow-prod', 'glow-pricing', 'glow-contact'];
+            const activeTarget = currentSectionId.replace('panel-', '');
+            
+            if (activeTarget) {
+                if (dockNav) {
+                    dockNav.classList.remove(...glowClasses);
+                    dockNav.classList.add(`glow-${activeTarget}`);
+                }
+                if (atlas) {
+                    atlas.classList.remove(...glowClasses);
+                    atlas.classList.add(`glow-${activeTarget}`);
+                }
+            }
+        }
+
+        window.removeEventListener('scroll', scrollSpy);
+        window.addEventListener('scroll', scrollSpy);
+        scrollSpy(); // Perform initial sync
+    }
+
+    document.addEventListener('DOMContentLoaded', initDock);
+    document.addEventListener('astro:page-load', initDock);
+</script>

@@ -12,13 +12,11 @@ const { game } = Astro.props;
 <div id={`${game.id}-game-container`} class="data-block dev-glow game-showcase">
     <div class="game-layout">
         <div class="game-info">
-            <div class="game-title-row">
-                <h4 class="game-title">{game.title} ({game.year})</h4>
-            </div>
-            <p class="game-desc" set:html={game.description} />
+            <h3>{game.title}</h3>
+            <p set:html={game.description} />
             <div class="game-buttons">
                 {game.buttons.map(btn => (
-                    <a href={btn.url} target="_blank" class="btn-action btn-dev btn-game">{btn.text}</a>
+                    <a href={btn.url} target="_blank" class="btn-action">{btn.text}</a>
                 ))}
             </div>
         </div>
@@ -44,27 +42,26 @@ const { game } = Astro.props;
         </div>
     </div>
 
-    <div id={`${game.id}-more-info`} class="systems-wrapper">
-        <div class="systems-panel">
-            <h5 class="systems-panel-title">Core Systems</h5>
-            <div class="systems-grid">
-                {game.systems.map(sys => (
-                    <SystemCard title={sys.title} desc={sys.desc} />
-                ))}
-            </div>
-        </div>
+    <div id={`${game.id}-more-info`} class="systems-grid" style="margin-top: 40px;">
+        {game.systems.map(sys => (
+            <SystemCard title={sys.title} desc={sys.desc} />
+        ))}
     </div>
 </div>
 
 <script>
-    // Handle image fallback for games with a data-fallback attribute
-    document.querySelectorAll<HTMLImageElement>('img[data-fallback]').forEach(img => {
-        img.addEventListener('error', () => {
-            const fallback = img.dataset.fallback;
-            if (fallback) {
-                img.src = fallback;
-                img.removeAttribute('data-fallback');
-            }
+    function initFallbacks() {
+        document.querySelectorAll<HTMLImageElement>('img[data-fallback]').forEach(img => {
+            img.addEventListener('error', () => {
+                const fallback = img.dataset.fallback;
+                if (fallback) {
+                    img.src = fallback;
+                    img.removeAttribute('data-fallback');
+                }
+            });
         });
-    });
+    }
+
+    document.addEventListener('DOMContentLoaded', initFallbacks);
+    document.addEventListener('astro:page-load', initFallbacks);
 </script>

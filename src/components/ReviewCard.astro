@@ -8,9 +8,9 @@ interface Props {
 const { review } = Astro.props;
 ---
 
-<div class="review-card prod-review">
+<div class="nested-block">
     <div class="stars">★★★★★</div>
     <p class="review-text">"{review.text}"</p>
-    <div class="review-author">{review.author}</div>
+    <p class="review-author">{review.author}</p>
     <a href="https://www.fiverr.com/users/tylerjmyles" target="_blank" class="verify-link">↗ Verified on Fiverr</a>
 </div>

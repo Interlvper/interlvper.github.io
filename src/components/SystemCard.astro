@@ -9,10 +9,7 @@ interface Props {
 const { title, desc } = Astro.props;
 ---
 
-<div class="system-card">
-    <div class="system-card-header">
-        <span class="system-card-indicator"></span>
-        <h6 class="system-card-title">{title}</h6>
-    </div>
-    <p class="system-card-desc">{desc}</p>
+<div class="nested-block">
+    <h4>{title}</h4>
+    <p>{desc}</p>
 </div>

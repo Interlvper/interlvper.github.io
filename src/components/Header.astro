@@ -1,75 +1,23 @@
 ---
-import { NAV_ITEMS, SOCIAL_LINKS } from '../data/navigation';
+import { SOCIAL_LINKS } from '../data/navigation';
+import Dock from './Dock.astro';
 ---
 
 <header class="atlas" id="site-header">
     <div class="atlas-header">
-        <div style="display: flex; align-items: center;">
+        <a href="#panel-home" style="text-decoration: none;">
             <h1>Tyler Myles</h1>
-            <div class="header-socials">
-                {SOCIAL_LINKS.map(social => (
-                    <a href={social.url} target="_blank" title={social.title}>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <Fragment set:html={social.svg} />
-                        </svg>
-                    </a>
-                ))}
-            </div>
+        </a>
+        <Dock />
+        <div class="header-socials">
+            {SOCIAL_LINKS.map(social => (
+                <a href={social.url} target="_blank" rel="noopener noreferrer" title={social.title}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <Fragment set:html={social.svg} />
+                    </svg>
+                </a>
+            ))}
         </div>
-        <button class="mobile-menu-toggle" id="mobile-menu-btn">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <line x1="3" y1="12" x2="21" y2="12"></line>
-                <line x1="3" y1="6" x2="21" y2="6"></line>
-                <line x1="3" y1="18" x2="21" y2="18"></line>
-            </svg>
-        </button>
     </div>
-    <nav class="atlas-nav">
-        {NAV_ITEMS.map((item, i) => (
-            <div class={`nav-item${i === 0 ? ' active' : ''}`} data-target={item.target}>
-                <span>{item.label}</span>
-            </div>
-        ))}
-    </nav>
 </header>
-
-<script is:inline>
-    // Panel switching — needs to be globally available for inline onclick usage
-    function switchPanel(targetId) {
-        document.querySelectorAll('.panel').forEach(function(panel) {
-            panel.classList.remove('active');
-        });
-        document.querySelectorAll('.nav-item').forEach(function(item) {
-            item.classList.remove('active');
-        });
-
-        document.querySelector('.nav-item[data-target="' + targetId + '"]').classList.add('active');
-        document.getElementById('panel-' + targetId).classList.add('active');
-
-        // Close the mobile menu
-        document.querySelector('.atlas').classList.remove('menu-open');
-
-        // Scroll to the top smoothly
-        document.querySelector('.viewport').scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    function toggleMobileMenu() {
-        document.querySelector('.atlas').classList.toggle('menu-open');
-    }
-
-    // Wire up nav items and mobile toggle via event delegation
-    document.addEventListener('DOMContentLoaded', function() {
-        document.querySelectorAll('.nav-item').forEach(function(item) {
-            item.addEventListener('click', function() {
-                switchPanel(item.dataset.target);
-            });
-        });
-
-        var mobileBtn = document.getElementById('mobile-menu-btn');
-        if (mobileBtn) {
-            mobileBtn.addEventListener('click', toggleMobileMenu);
-        }
-    });
-</script>

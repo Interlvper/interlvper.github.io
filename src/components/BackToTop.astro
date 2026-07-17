@@ -1,0 +1,42 @@
+---
+// BackToTop.astro — Floating scroll to top button using the Nostromo theme
+---
+
+<button id="back-to-top" class="btn-action btn-back-to-top" aria-label="Scroll back to top">
+    <span>↑ TOP</span>
+</button>
+
+<script>
+    function initBackToTop() {
+        const btn = document.getElementById('back-to-top');
+        if (!btn) return;
+
+        const toggleVisibility = () => {
+            // Show button after scrolling down 300px
+            if (window.scrollY > 300) {
+                btn.classList.add('visible');
+            } else {
+                btn.classList.remove('visible');
+            }
+        };
+
+        window.removeEventListener('scroll', toggleVisibility);
+        window.addEventListener('scroll', toggleVisibility);
+
+        btn.removeEventListener('click', scrollUp);
+        btn.addEventListener('click', scrollUp);
+
+        function scrollUp() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Run once on load
+        toggleVisibility();
+    }
+
+    document.addEventListener('DOMContentLoaded', initBackToTop);
+    document.addEventListener('astro:page-load', initBackToTop);
+</script>
