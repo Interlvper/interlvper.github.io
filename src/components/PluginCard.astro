@@ -16,8 +16,8 @@ const { plugin } = Astro.props;
     <div>
         <div class="fab-logo"><span>{plugin.tech}</span></div>
         <div class="fab-buttons">
-            <a href={plugin.fabUrl} target="_blank" class="btn-action">View on FAB</a>
-            <a href={plugin.demoUrl} target="_blank" class="btn-action">Download Demo</a>
+            <a href={plugin.fabUrl} target="_blank" rel="noopener noreferrer" class="btn-action">View on FAB</a>
+            <a href={plugin.demoUrl} target="_blank" rel="noopener noreferrer" class="btn-action">Download Demo</a>
         </div>
     </div>
 </div>

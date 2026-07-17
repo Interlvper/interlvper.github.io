@@ -16,18 +16,22 @@ const { game } = Astro.props;
             <p set:html={game.description} />
             <div class="game-buttons">
                 {game.buttons.map(btn => (
-                    <a href={btn.url} target="_blank" class="btn-action">{btn.text}</a>
+                    <a href={btn.url} target="_blank" rel="noopener noreferrer" class="btn-action">{btn.text}</a>
                 ))}
             </div>
         </div>
         <div class="game-media">
             <div class="game-media-frame">
-                <a href={game.primaryUrl} target="_blank">
+                <a href={game.primaryUrl} target="_blank" rel="noopener noreferrer">
                     {game.fallbackImage ? (
                         <img
                             src={game.image}
                             alt={game.imageAlt}
                             class="game-cover-img"
+                            loading="lazy"
+                            decoding="async"
+                            width="600"
+                            height="280"
                             data-fallback={game.fallbackImage}
                         />
                     ) : (
@@ -35,6 +39,10 @@ const { game } = Astro.props;
                             src={game.image}
                             alt={game.imageAlt}
                             class="game-cover-img"
+                            loading="lazy"
+                            decoding="async"
+                            width="600"
+                            height="280"
                         />
                     )}
                 </a>

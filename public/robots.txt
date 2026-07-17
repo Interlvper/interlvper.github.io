@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tylermyles.dev/sitemap.xml
+Sitemap: https://tylermyles.dev/sitemap-index.xml
