@@ -364,12 +364,12 @@ ul {
 }
 
 .dev-title {
-    color: var(--fg-main);
+    color: var(--accent-dev);
     text-shadow: 0 0 35px rgba(0, 208, 255, 0.3);
 }
 
 .prod-title {
-    color: var(--fg-main);
+    color: var(--accent-prod);
     text-shadow: 0 0 35px rgba(255, 68, 0, 0.3);
 }
 
@@ -712,18 +712,9 @@ ul {
 }
 
 .deliverables-list li::before {
-    content: ">>";
+    content: "•";
     position: absolute;
     left: 0;
-    color: var(--accent-prod);
-    font-weight: 800;
-    letter-spacing: -2px;
-}
-
-
-
-#panel-contact .deliverables-list li::before {
-    content: "•";
     color: var(--fg-dim);
     font-size: 1.2rem;
     font-weight: normal;
