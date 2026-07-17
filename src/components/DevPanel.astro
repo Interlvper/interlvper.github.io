@@ -17,7 +17,7 @@ import GitHubRepos from './GitHubRepos.astro';
     ))}
 
     <div class="data-block dev-glow" style="margin-bottom: 60px;">
-        <h3 id="dev-plugins">Published Plugins</h3>
+        <h3 id="dev-plugins">Published Unreal Engine Plugins</h3>
         <div class="fab-grid" style="margin-bottom: 0;">
             {PLUGINS.map(plugin => (
                 <PluginCard plugin={plugin} />
@@ -26,7 +26,7 @@ import GitHubRepos from './GitHubRepos.astro';
     </div>
 
     <div class="data-block git-glow" style="margin-bottom: 60px;">
-        <h3 id="git-repos">Github Repositories</h3>
+        <h3 id="git-repos">Open Source Repositories</h3>
         <GitHubRepos />
     </div>
 

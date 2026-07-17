@@ -30,7 +30,7 @@ export const PLUGINS: Plugin[] = [
   },
   {
     title: 'Grid Inventory System',
-    desc: 'A C+ inventory system similar to Diablo and Escape From Tarkov.',
+    desc: 'A C++ grid inventory system similar to Diablo and Escape From Tarkov. Server-authoritative with network replication.',
     tech: 'UE5 / C++',
     fabUrl: 'https://www.fab.com/listings/2ddd1c8f-ec78-477e-a4db-9afd10e41004',
     demoUrl: 'https://drive.google.com/file/d/1hdD2WCTw4gL5RRzi_cnUELwFL-yqMejB/view'

@@ -1,5 +1,8 @@
 ---
 import '../styles/global.css';
+import { GAMES } from '../data/games';
+import { PLUGINS } from '../data/plugins';
+import { REVIEWS } from '../data/reviews';
 
 interface Props {
   title: string;
@@ -13,33 +16,93 @@ const {
   canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://tylermyles.dev').href
 } = Astro.props;
 
+// ProfilePage wrapper with Person as mainEntity
 const schemaData = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Tyler Myles",
+  "@type": "ProfilePage",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Tyler Myles",
+    "url": "https://tylermyles.dev",
+    "jobTitle": ["Game Developer", "Gameplay Programmer", "Unreal Engine C++ Programmer", "Audio Engineer", "Modern Metal Producer"],
+    "description": description,
+    "knowsAbout": [
+      "Unreal Engine 5", "C++", "Game Development", "Multiplayer Networking",
+      "Prediction Rollback Systems", "Technical Art", "Blueprints", "Game AI",
+      "Inventory Systems", "Ballistics Simulation", "Plugin Development",
+      "Gameplay Programming", "Netcode", "Dedicated Server Architecture",
+      "Gameplay Ability System", "GAS", "Slate UI", "UMG",
+      "Procedural Generation", "Replication", "Network Prediction",
+      "Audio Mixing", "Audio Mastering", "Modern Metal Production", "Songwriting"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Santa Fe",
+      "addressRegion": "NM",
+      "addressCountry": "US"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/tyler-j-myles/",
+      "https://www.youtube.com/@interlvper",
+      "https://github.com/Interlvper",
+      "https://www.instagram.com/tylerjmyles/",
+      "https://www.fiverr.com/users/tylerjmyles",
+      "https://interlvper.itch.io/"
+    ]
+  }
+};
+
+// VideoGame structured data for each shipped title
+const gameSchemas = GAMES.map(game => ({
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": game.title,
+  "description": game.description.replace(/<[^>]*>/g, ''),
+  "author": { "@type": "Person", "name": "Tyler Myles" },
+  "gamePlatform": "PC",
+  "applicationCategory": "Game",
+  "operatingSystem": "Windows",
+  "url": game.primaryUrl,
+  "image": game.image,
+  "datePublished": `${game.year}`
+}));
+
+// SoftwareApplication structured data for published UE5 plugins
+const pluginSchemas = PLUGINS.map(plugin => ({
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": plugin.title,
+  "description": plugin.desc,
+  "applicationCategory": "Game Development Plugin",
+  "operatingSystem": "Windows",
+  "author": { "@type": "Person", "name": "Tyler Myles" },
+  "url": plugin.fabUrl,
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "USD"
+  }
+}));
+
+// AggregateRating + individual Review structured data
+const reviewSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Tyler Myles — Freelance Game Developer & Audio Engineer",
   "url": "https://tylermyles.dev",
-  "jobTitle": ["Game Developer", "Unreal Engine C++ Programmer", "Audio Engineer", "Modern Metal Producer"],
-  "description": description,
-  "knowsAbout": [
-    "Unreal Engine 5", "C++", "Game Development", "Multiplayer Networking",
-    "Prediction Rollback Systems", "Technical Art", "Blueprints", "Game AI",
-    "Inventory Systems", "Ballistics Simulation", "Plugin Development",
-    "Audio Mixing", "Audio Mastering", "Modern Metal Production", "Songwriting"
-  ],
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Santa Fe",
-    "addressRegion": "NM",
-    "addressCountry": "US"
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "bestRating": "5",
+    "ratingCount": String(REVIEWS.length),
+    "reviewCount": String(REVIEWS.length)
   },
-  "sameAs": [
-    "https://www.linkedin.com/in/tyler-j-myles/",
-    "https://www.youtube.com/@interlvper",
-    "https://github.com/Interlvper",
-    "https://www.instagram.com/tylerjmyles/",
-    "https://www.fiverr.com/users/tylerjmyles",
-    "https://interlvper.itch.io/"
-  ]
+  "review": REVIEWS.map(r => ({
+    "@type": "Review",
+    "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+    "author": { "@type": "Person", "name": r.author.replace(/ \(.*\)/, '') },
+    "reviewBody": r.text
+  }))
 };
 ---
 
@@ -50,7 +113,9 @@ const schemaData = {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title}</title>
     <meta name="description" content={description}>
-    <meta name="keywords" content="game developer, Unreal Engine developer, UE5 C++ programmer, game programmer for hire, freelance game developer, Unreal Engine specialist, prediction rollback systems, multiplayer game developer, modern metal mixing, mastering engineer, audio production, Santa Fe game developer">
+    <meta name="keywords" content="game developer, Unreal Engine developer, UE5 C++ programmer, game programmer for hire, freelance game developer, Unreal Engine specialist, prediction rollback systems, multiplayer game developer, gameplay programmer, netcode developer, modern metal mixing, mastering engineer, audio production, Santa Fe game developer">
+    <meta name="author" content="Tyler Myles">
+    <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="theme-color" content="#050403">
     <link rel="canonical" href={canonicalURL}>
 
@@ -76,10 +141,18 @@ const schemaData = {
 
     <!-- JSON-LD Structured Data for SEO -->
     <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+    {gameSchemas.map(schema => (
+        <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    ))}
+    {pluginSchemas.map(schema => (
+        <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    ))}
+    <script type="application/ld+json" set:html={JSON.stringify(reviewSchema)} />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;800&family=JetBrains+Mono:wght@400;700&display=swap">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;800&family=JetBrains+Mono:wght@400;700&display=swap"
         rel="stylesheet">

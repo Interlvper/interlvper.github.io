@@ -9,7 +9,7 @@ import { SOCIAL_LINKS } from '../data/navigation';
         </a>
         <div class="header-socials">
             {SOCIAL_LINKS.map(social => (
-                <a href={social.url} target="_blank" rel="noopener noreferrer" title={social.title}>
+                <a href={social.url} target="_blank" rel="noopener noreferrer" title={social.title} aria-label={`Visit Tyler Myles on ${social.title}`}>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <Fragment set:html={social.svg} />
